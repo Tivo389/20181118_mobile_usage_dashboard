@@ -8,12 +8,12 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $ffHeader;
+  font-family: $fontHeader;
   margin: 0 0 0.25em 0;
 }
 
 p, a {
-  font-family: $ffBody;
+  font-family: $fontBody;
   margin: 0;
 }
 
@@ -22,36 +22,36 @@ p + p {
 }
 
 h1 {
-  font-size: $fsH1;
+  font-size: $fontH1;
 }
 
 h2 {
-  font-size: $fsH2;
+  font-size: $fontH2;
 }
 
 h3 {
-  font-size: $fsH3;
+  font-size: $fontH3;
 }
 
 h4 {
-  font-size: $fsH4;
+  font-size: $fontH4;
 }
 
 h5 {
-  font-size: $fsH5;
+  font-size: $fontH5;
 }
 
 h6 {
-  font-size: $fsH6;
+  font-size: $fontH6;
   font-weight: bolder;
 }
 
 p {
-  font-size: $fsP;
+  font-size: $fontP;
 }
 
 a {
-  font-size: $fsP;
+  font-size: $fontP;
   &:visited, &:focus, &:active {
     color: $colorBlack;
     outline: none;

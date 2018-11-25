@@ -6,20 +6,14 @@
 @import '_debugger';
 @import '_mediaQuery';
 
+@import '_header';
+@import '_navTabs';
+@import '_bodyUsage';
 
-
-// ELEMENT LEVEL ----------------------------------------------------------------------------------
-
-
-
-// CLASS LEVEL ------------------------------------------------------------------------------------
-.mainWrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  width: 100vw;
+.app {
+  background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);
+  min-width: 100vw;
+  min-height: 100vh;
   @include tablet {
     flex-direction: initial;
   }

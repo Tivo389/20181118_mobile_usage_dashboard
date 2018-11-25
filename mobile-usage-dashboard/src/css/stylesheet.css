@@ -311,11 +311,11 @@ h1, h2, h3, h4, h5, h6, p, a {
   line-height: 125%; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 0 0.25em 0; }
 
 p, a {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0; }
 
 p + p {
@@ -372,16 +372,71 @@ a {
 .hidden {
   display: none !important; }
 
-.mainWrapper {
-  align-items: center;
+.header {
+  min-height: 44px;
+  min-width: 100%;
+  padding: 2px 4px;
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  width: 100vw; }
+  justify-content: space-between;
+  align-items: center; }
+
+.headerLogo {
+  max-height: 30px; }
+
+.navMenuIcon {
+  min-height: 44px;
+  min-width: 44px;
+  max-height: 44px;
+  max-width: 44px;
+  padding: 14px 8px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; }
+  .navMenuIcon > div {
+    background-color: #FFFFFF;
+    width: 26px;
+    height: 2px; }
+
+.navTabs {
+  display: flex;
+  justify-content: space-between; }
+
+.navTab {
+  background-color: #eeeeee;
+  flex: 1 0 auto;
+  max-width: calc(33.333333% - 0.4em);
+  min-width: 100px;
+  padding: 0.8em 0.6em 0.6em 0.6em; }
+  .navTab:first-of-type {
+    border-top-right-radius: 0.6em; }
+  .navTab:nth-of-type(2) {
+    border-top-left-radius: 0.6em;
+    border-top-right-radius: 0.6em; }
+  .navTab:last-of-type {
+    border-top-left-radius: 0.6em; }
+  .navTab > p {
+    color: #777777;
+    font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    text-align: center; }
+  .navTab.active {
+    background-color: #FFFFFF; }
+    .navTab.active > p {
+      color: #427AC6; }
+
+.body {
+  border: 1px dashed red;
+  background-color: #FFFFFF; }
+
+.app {
+  background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);
+  min-width: 100vw;
+  min-height: 100vh; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .mainWrapper {
+    .app {
       flex-direction: initial; } }
   @media (min-width: 1024px) {
-    .mainWrapper {
+    .app {
       flex-direction: initial; } }
