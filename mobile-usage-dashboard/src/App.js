@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Header, NavTabs, BodyUsage, Footer } from './components';
+import {
+  Header,
+  NavTabs,
+  BodyUsage,
+  Footer
+} from './components';
 
 import './css/stylesheet.css';
 
