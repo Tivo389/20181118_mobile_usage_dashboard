@@ -307,25 +307,28 @@ html {
   font-size: 62.5%; }
 
 h1, h2, h3, h4, h5, h6, p, a {
-  color: #222222;
-  line-height: 125%; }
+  color: #474747;
+  margin: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0 0 0.25em 0; }
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 p, a {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0; }
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h1 {
   font-size: calc(1.6rem * 4.48); }
 
 h2 {
-  font-size: calc(1.6rem * 3.32); }
+  font-size: 2.8rem;
+  letter-spacing: -0.06rem;
+  font-weight: 700; }
+  h2 > span {
+    font-size: 65%; }
 
 h3 {
-  font-size: calc(1.6rem * 2.46); }
+  font-size: 1.4rem;
+  font-weight: 700; }
 
 h4 {
   font-size: calc(1.6rem * 1.83); }
@@ -338,12 +341,13 @@ h6 {
   font-weight: bolder; }
 
 p {
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  line-height: 125%; }
 
 a {
   font-size: 1.6rem; }
   a:visited, a:focus, a:active {
-    color: #222222;
+    color: #474747;
     outline: none;
     text-decoration: none; }
 
@@ -424,7 +428,6 @@ header {
       color: #427AC6; }
 
 .body {
-  border: 1px dashed red;
   background-color: #FFFFFF; }
 
 .blockFooter {
@@ -451,13 +454,45 @@ header {
   color: #EE6B1E;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1;
-  margin-left: auto;
   margin: 0.6em 0 0 auto;
   padding: 0.3em 1.2em 0.2em 1.2em; }
   .blockFooterBtn > i {
+    font-size: 80%; }
+
+.block {
+  padding: 14px 10px;
+  border-bottom: 1px solid #cccccc; }
+
+.blockTitle {
+  align-items: center;
+  display: flex;
+  justify-content: space-between; }
+  .blockTitle > .fa-chevron-down {
+    font-size: calc(2.8rem * 0.8);
+    margin: 0 2px 0 0; }
+
+.blockInfo {
+  display: flex;
+  flex-direction: column; }
+  .blockInfo > div {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between; }
+
+.blockInfoBtn {
+  appearance: none;
+  border: 0;
+  color: #EE6B1E;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 0.3em 1.2em 0.2em 1.2em; }
+  .blockInfoBtn > i {
     font-size: 80%; }
 
 .app {

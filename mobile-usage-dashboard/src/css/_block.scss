@@ -1,0 +1,77 @@
+.block {
+  padding: 14px 10px;
+  border-bottom: 1px solid $colorLightGray;
+}
+
+.blockFooter {
+  padding: 1.2em 1em;
+  display: flex;
+  flex-direction: column;
+  & + .blockFooter {
+    border-top: 4px solid $colorWhite;
+  }
+  & > p {
+    color: $colorWhite;
+    display: inline-block;
+    font-family: $fontBody;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    width: 85%;
+  }
+}
+
+.blockFooterBtn {
+  appearance: none;
+  background-color: $colorWhite;
+  border-radius: 10em;
+  border: 0;
+  color: $colorMain;
+  font-family: $fontBody;
+  font-size: 1.2rem;
+  font-weight: $fontWeightMedium;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin: 0.6em 0 0 auto;
+  padding: 0.3em 1.2em 0.2em 1.2em;
+  & > i {
+    font-size: 80%;
+  }
+}
+
+
+.blockTitle {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  & > .fa-chevron-down {
+    font-size: calc(#{$fontH2} * 0.8);
+    margin: 0 2px 0 0;
+  }
+}
+
+.blockInfo {
+  display: flex;
+  flex-direction: column;
+  & > div {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.blockInfoBtn {
+  appearance: none;
+  border: 0;
+  color: $colorMain;
+  font-family: $fontBody;
+  font-size: 1.2rem;
+  font-weight: $fontWeightMedium;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  padding: 0.3em 1.2em 0.2em 1.2em;
+  & > i {
+    font-size: 80%;
+  }
+}

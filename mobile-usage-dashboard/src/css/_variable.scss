@@ -4,25 +4,11 @@ $boxShadowHover: 0 6px 6px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.16), 0 0 6px
 $colorMain:      #EE6B1E;
 $colorSub:       #427AC6;
 $colorAccent:    #EE86A8;
-$colorBlack:     #222222;
-$colorDarkGray:  #444444;
+$colorBlack:     #474747;
+// $colorDarkGray:  #444444;
 $colorGray:      #777777;
 $colorLightGray: #cccccc;
 $colorWhite:     #FFFFFF;
-
-
-// font-family: 'Roboto Condensed', sans-serif;
-// font-family: 'Roboto', sans-serif;
-$fontHeader: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fontBody: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fontCondensed: "Roboto Condensed", "Arial Narrow", sans-serif;
-$fontP: 1.6rem;                     // BODY TEXT
-$fontH1: calc(#{$fontP} * 4.48);    // PAGE BANNER
-$fontH2: calc(#{$fontP} * 3.32);    // PAGE MAIN HEADER
-$fontH3: calc(#{$fontP} * 2.46);    // PAGE SUB HEADER
-$fontH4: calc(#{$fontP} * 1.83);    // ARTICLE MAIN HEADER
-$fontH5: calc(#{$fontP} * 1.35);    // ARTICLE SUB HEADER
-$fontH6: $fontP;                    // ARTICLE SECTION
 
 $emSpacerS: 0.65em;
 $emSpacerM: 1.30em;
