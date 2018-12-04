@@ -1,20 +1,36 @@
+// font-family: 'Roboto Condensed', sans-serif;
+// font-family: 'Roboto', sans-serif;
+$fontHeader: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontBody: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fontCondensed: "Roboto Condensed", "Arial Narrow", sans-serif;
+
+$fontWeightRegular: 400;
+$fontWeightMedium: 700;
+$fontWeightBold: 900;
+
+$fontP: 1.6rem;                     // BODY TEXT
+$fontH1: calc(#{$fontP} * 4.48);    // PAGE BANNER
+$fontH2: 2.8rem;                    // BLOCK TITLE
+$fontH3: 1.4rem;                    // BLOCK SUBTITLE
+$fontH4: calc(#{$fontP} * 1.83);    // ARTICLE MAIN HEADER
+$fontH5: calc(#{$fontP} * 1.35);    // ARTICLE SUB HEADER
+$fontH6: $fontP;                    // ARTICLE SECTION
+
 html {
   font-size: 62.5%;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
   color: $colorBlack;
-  line-height: 125%;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $fontHeader;
-  margin: 0 0 0.25em 0;
 }
 
 p, a {
   font-family: $fontBody;
-  margin: 0;
 }
 
 h1 {
@@ -23,10 +39,16 @@ h1 {
 
 h2 {
   font-size: $fontH2;
+  letter-spacing: -0.06rem;
+  font-weight: $fontWeightMedium;
+  & > span {
+    font-size: 65%;
+  }
 }
 
 h3 {
   font-size: $fontH3;
+  font-weight: $fontWeightMedium;
 }
 
 h4 {
@@ -44,6 +66,7 @@ h6 {
 
 p {
   font-size: $fontP;
+  line-height: 125%;
 }
 
 a {
