@@ -323,12 +323,11 @@ h2 {
   font-size: 2.8rem;
   letter-spacing: -0.06rem;
   font-weight: 700; }
-  h2 > span {
-    font-size: 65%; }
 
 h3 {
   font-size: 1.4rem;
-  font-weight: 700; }
+  font-weight: 400;
+  text-transform: uppercase; }
 
 h4 {
   font-size: calc(1.6rem * 1.83); }
@@ -431,8 +430,11 @@ header {
   background-color: #FFFFFF; }
 
 .block {
-  padding: 14px 10px;
+  padding: 18px 10px 14px 10px;
   border-bottom: 1px solid #cccccc; }
+
+.blockData {
+  border: 1px dashed red; }
 
 .blockFooter {
   padding: 1.2em 1em;
@@ -449,22 +451,47 @@ header {
     letter-spacing: 0.04em;
     text-transform: uppercase;
     width: 85%; }
+  .blockFooter .blockFooterBtn {
+    appearance: none;
+    background-color: #FFFFFF;
+    border-radius: 10em;
+    border: 0;
+    color: #EE6B1E;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin: 0.6em 0 0 auto;
+    padding: 0.3em 1.2em 0.2em 1.2em; }
+    .blockFooter .blockFooterBtn > i {
+      font-size: 80%; }
 
-.blockFooterBtn {
-  appearance: none;
-  background-color: #FFFFFF;
-  border-radius: 10em;
-  border: 0;
-  color: #EE6B1E;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  margin: 0.6em 0 0 auto;
-  padding: 0.3em 1.2em 0.2em 1.2em; }
-  .blockFooterBtn > i {
-    font-size: 80%; }
+.blockInfo {
+  display: flex;
+  flex-direction: column; }
+  .blockInfo > div {
+    flex-wrap: wrap;
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between; }
+  .blockInfo h2 > span {
+    font-size: 65%; }
+  .blockInfo .blockInfoBtn {
+    appearance: none;
+    border: 0;
+    background-color: #FFFFFF;
+    color: #EE6B1E;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-left: auto;
+    padding: 0;
+    text-transform: uppercase; }
+    .blockInfo .blockInfoBtn > i {
+      font-size: 80%; }
 
 .blockTitle {
   align-items: center;
@@ -473,27 +500,6 @@ header {
   .blockTitle > .fa-chevron-down {
     font-size: calc(2.8rem * 0.8);
     margin: 0 2px 0 0; }
-
-.blockInfo {
-  display: flex;
-  flex-direction: column; }
-  .blockInfo > div {
-    align-items: flex-end;
-    display: flex;
-    justify-content: space-between; }
-
-.blockInfoBtn {
-  appearance: none;
-  border: 0;
-  color: #EE6B1E;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  padding: 0.3em 1.2em 0.2em 1.2em; }
-  .blockInfoBtn > i {
-    font-size: 80%; }
 
 .app {
   background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);

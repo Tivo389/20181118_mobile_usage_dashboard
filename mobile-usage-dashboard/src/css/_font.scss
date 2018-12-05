@@ -41,14 +41,12 @@ h2 {
   font-size: $fontH2;
   letter-spacing: -0.06rem;
   font-weight: $fontWeightMedium;
-  & > span {
-    font-size: 65%;
-  }
 }
 
 h3 {
   font-size: $fontH3;
-  font-weight: $fontWeightMedium;
+  font-weight: $fontWeightRegular;
+  text-transform: uppercase;
 }
 
 h4 {
