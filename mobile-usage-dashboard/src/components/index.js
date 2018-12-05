@@ -1,11 +1,11 @@
 import Header from './Header';
 import NavTabs from './NavTabs';
 import BodyUsage from './BodyUsage';
-import BlockFooter from './BlockFooter';
+import Footer from './Footer';
 
 export {
   Header,
   NavTabs,
   BodyUsage,
-  BlockFooter
+  Footer
 };
