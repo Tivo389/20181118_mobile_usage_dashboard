@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 class BlockInfo extends Component {
+
   render() {
+    const { title, body, unit, action } = this.props;
     return (
       <div className="block blockInfo">
-          <h3>YOUR CURRENT PLAN</h3>
+          <h3>{ title }</h3>
           <div>
-            <h2>Home 250<span>MB</span></h2>
+            <h2>{ body }{ unit ? <span>{ unit }</span> : null }</h2>
             <button className="blockInfoBtn">
-              CHANGE PLAN&emsp;<i className="fas fa-play"></i>
+              { action }&emsp;<i className="fas fa-play"></i>
             </button>
           </div>
       </div>

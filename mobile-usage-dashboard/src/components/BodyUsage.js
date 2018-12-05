@@ -6,8 +6,13 @@ class BodyUsage extends Component {
   render() {
     return (
       <main className="body bodyUsage">
-        <BlockInfo></BlockInfo>
-        <BlockTitle></BlockTitle>
+        <BlockInfo
+          title="YOUR CURRENT PLAN"
+          body="Home 250"
+          unit="MB"
+          action="CHANGE PLAN"></BlockInfo>
+        <BlockTitle
+          title="Usage History"></BlockTitle>
         <p>blockOfData</p>
       </main>
     );

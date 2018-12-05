@@ -430,6 +430,10 @@ header {
 .body {
   background-color: #FFFFFF; }
 
+.block {
+  padding: 14px 10px;
+  border-bottom: 1px solid #cccccc; }
+
 .blockFooter {
   padding: 1.2em 1em;
   display: flex;
@@ -461,10 +465,6 @@ header {
   padding: 0.3em 1.2em 0.2em 1.2em; }
   .blockFooterBtn > i {
     font-size: 80%; }
-
-.block {
-  padding: 14px 10px;
-  border-bottom: 1px solid #cccccc; }
 
 .blockTitle {
   align-items: center;

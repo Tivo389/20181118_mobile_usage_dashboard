@@ -4,7 +4,7 @@ class BlockTitle extends Component {
   render() {
     return (
       <div className="block blockTitle">
-        <h2>Usage History</h2>
+        <h2>{ this.props.title }</h2>
         <i className="fas fa-chevron-down"></i>
       </div>
     );
