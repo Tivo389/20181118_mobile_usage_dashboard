@@ -1,0 +1,55 @@
+.barChart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #EBEBEB;
+  border-radius: 500px;
+  height: 40px;
+  margin: 3px 0 0 0;
+  padding: 0 10px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  & > p {
+    color: $colorGray;
+    font-size: 1.8rem;
+    font-weight: $fontWeightMedium;
+    line-height: 1;
+    text-align: right;
+    & > span {
+      font-size: 65%;
+    }
+  }
+  & > .barChartBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: left;
+    &.data {
+      background-image: linear-gradient(-270deg, #5F00A3 0%, #F000B4 100%);
+    }
+    &.talk {
+      background-image: linear-gradient(-270deg, #068394 0%, #09E0A0 100%);
+    }
+    &.text {
+      background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%);
+    }
+    & > p {
+      margin-right: 10px;
+      color: $colorWhite;
+      font-size: 1.8rem;
+      font-weight: $fontWeightMedium;
+      line-height: 1;
+      text-align: right;
+      transform-origin: right;
+      & > span {
+        font-size: 65%;
+      }
+    }
+  }
+}
