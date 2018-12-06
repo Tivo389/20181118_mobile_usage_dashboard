@@ -429,19 +429,44 @@ header {
 .body {
   background-color: #FFFFFF; }
 
+.blockData .blockDataBtn, .blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn {
+  appearance: none;
+  border: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1; }
+  .blockData .blockDataBtn > i, .blockFooter .blockFooterBtn > i, .blockInfo .blockInfoBtn > i {
+    font-size: 80%; }
+
 .block {
-  padding: 18px 10px 14px 10px;
+  padding: 22px 10px 14px 10px;
   border-bottom: 1px solid #cccccc; }
+  .block:last-of-type {
+    border-bottom: 0; }
 
 .blockData {
-  border: 1px dashed red; }
+  padding-bottom: 22px; }
+  .blockData > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .blockData > div > h3 {
+      flex: 1 0 auto; }
+  .blockData .blockDataBtn {
+    background-color: #EE6B1E;
+    border-radius: 500px;
+    color: #FFFFFF;
+    font-weight: 900;
+    height: 18px;
+    padding: 2px 0 0 0;
+    width: 18px; }
 
 .blockFooter {
-  padding: 1.2em 1em;
+  border-bottom: 4px solid #FFFFFF;
   display: flex;
-  flex-direction: column; }
-  .blockFooter + .blockFooter {
-    border-top: 4px solid #FFFFFF; }
+  flex-direction: column;
+  padding: 1.6em 1em; }
+  .blockFooter:last-of-type {
+    border-bottom: 0; }
   .blockFooter > p {
     color: #FFFFFF;
     display: inline-block;
@@ -452,46 +477,34 @@ header {
     text-transform: uppercase;
     width: 85%; }
   .blockFooter .blockFooterBtn {
-    appearance: none;
     background-color: #FFFFFF;
-    border-radius: 10em;
-    border: 0;
+    border-radius: 500px;
     color: #EE6B1E;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    line-height: 1;
     margin: 0.6em 0 0 auto;
     padding: 0.3em 1.2em 0.2em 1.2em; }
-    .blockFooter .blockFooterBtn > i {
-      font-size: 80%; }
 
 .blockInfo {
   display: flex;
   flex-direction: column; }
   .blockInfo > div {
-    flex-wrap: wrap;
     align-items: baseline;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between; }
   .blockInfo h2 > span {
     font-size: 65%; }
   .blockInfo .blockInfoBtn {
-    appearance: none;
-    border: 0;
     background-color: #FFFFFF;
     color: #EE6B1E;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.02em;
-    line-height: 1;
     margin-left: auto;
     padding: 0;
     text-transform: uppercase; }
-    .blockInfo .blockInfoBtn > i {
-      font-size: 80%; }
 
 .blockTitle {
   align-items: center;
@@ -500,6 +513,53 @@ header {
   .blockTitle > .fa-chevron-down {
     font-size: calc(2.8rem * 0.8);
     margin: 0 2px 0 0; }
+
+.barChart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #EBEBEB;
+  border-radius: 500px;
+  height: 40px;
+  margin: 3px 0 0 0;
+  padding: 0 10px;
+  position: relative;
+  overflow: hidden;
+  width: 100%; }
+  .barChart > p {
+    color: #777777;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: right; }
+    .barChart > p > span {
+      font-size: 65%; }
+  .barChart > .barChartBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-origin: left; }
+    .barChart > .barChartBar.data {
+      background-image: linear-gradient(-270deg, #5F00A3 0%, #F000B4 100%); }
+    .barChart > .barChartBar.talk {
+      background-image: linear-gradient(-270deg, #068394 0%, #09E0A0 100%); }
+    .barChart > .barChartBar.text {
+      background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%); }
+    .barChart > .barChartBar > p {
+      margin-right: 10px;
+      color: #FFFFFF;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: right;
+      transform-origin: right; }
+      .barChart > .barChartBar > p > span {
+        font-size: 65%; }
 
 .app {
   background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);
