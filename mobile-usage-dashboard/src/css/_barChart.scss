@@ -1,30 +1,38 @@
+%extendText {
+  font-size: 1.8rem;
+  font-weight: $fontWeightMedium;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: right;
+  & > span {
+    font-size: 65%;
+    letter-spacing: initial;
+    margin: 0 0 0 0.2em;
+    text-transform: uppercase;
+  }
+}
+
 .barChart {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: #EBEBEB;
   border-radius: 500px;
+  display: flex;
+  flex-direction: column;
   height: 40px;
-  margin: 3px 0 0 0;
-  padding: 0 10px;
-  position: relative;
+  justify-content: center;
+  margin: 2px 0 0 0;
   overflow: hidden;
+  padding: 0 0.8rem 0 0;
+  position: relative;
   width: 100%;
   & > p {
+    @extend %extendText;
     color: $colorGray;
-    font-size: 1.8rem;
-    font-weight: $fontWeightMedium;
-    line-height: 1;
-    text-align: right;
-    & > span {
-      font-size: 65%;
-    }
   }
   & > .barChartBar {
+    bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    bottom: 0;
     left: 0;
     position: absolute;
     right: 0;
@@ -40,16 +48,11 @@
       background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%);
     }
     & > p {
-      margin-right: 10px;
+      @extend %extendText;
       color: $colorWhite;
-      font-size: 1.8rem;
-      font-weight: $fontWeightMedium;
-      line-height: 1;
-      text-align: right;
+      padding: 0 0.8rem 0 0;
       transform-origin: right;
-      & > span {
-        font-size: 65%;
-      }
+      text-transform: uppercase;
     }
   }
 }

@@ -321,7 +321,7 @@ h1 {
 
 h2 {
   font-size: 2.8rem;
-  letter-spacing: -0.06rem;
+  letter-spacing: -0.1rem;
   font-weight: 700; }
 
 h3 {
@@ -406,7 +406,7 @@ header {
   flex: 1 0 auto;
   max-width: calc(33.333333% - 0.4em);
   min-width: 100px;
-  padding: 0.8em 0.6em 0.6em 0.6em; }
+  padding: 0.8em 0.2em 0.6em 0.2em; }
   .navTab:first-of-type {
     border-top-right-radius: 0.6em; }
   .navTab:nth-of-type(2) {
@@ -418,7 +418,7 @@ header {
     color: #777777;
     font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
     font-size: 1.4rem;
-    letter-spacing: 0.03em;
+    letter-spacing: -0.02em;
     line-height: 1;
     text-align: center; }
   .navTab.active {
@@ -429,13 +429,27 @@ header {
 .body {
   background-color: #FFFFFF; }
 
-.blockData .blockDataBtn, .blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn {
+.blockData .blockDataBtn, .blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn, .blockTitle button {
   appearance: none;
+  border-radius: 500px;
   border: 0;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1; }
-  .blockData .blockDataBtn > i, .blockFooter .blockFooterBtn > i, .blockInfo .blockInfoBtn > i {
+  line-height: 1;
+  padding: 0; }
+  .blockData .blockDataBtn:focus, .blockFooter .blockFooterBtn:focus, .blockInfo .blockInfoBtn:focus, .blockTitle button:focus {
+    outline: none; }
+  .blockData .blockDataBtn i, .blockFooter .blockFooterBtn i, .blockInfo .blockInfoBtn i, .blockTitle button i {
+    margin: 0 0 0 0.4em;
     font-size: 80%; }
+  .blockData .blockDataBtn i.fa-plus, .blockFooter .blockFooterBtn i.fa-plus, .blockInfo .blockInfoBtn i.fa-plus, .blockTitle button i.fa-plus {
+    margin: 0; }
+
+.blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn {
+  background-color: #FFFFFF;
+  color: #EE6B1E;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em; }
 
 .block {
   padding: 22px 10px 14px 10px;
@@ -449,25 +463,29 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; }
-    .blockData > div > h3 {
+    .blockData > div + div {
+      margin: 1.6rem 0 0 0; }
+    .blockData > div h3 {
       flex: 1 0 auto; }
   .blockData .blockDataBtn {
     background-color: #EE6B1E;
-    border-radius: 500px;
     color: #FFFFFF;
     font-weight: 900;
     height: 18px;
-    padding: 2px 0 0 0;
+    padding: 0.25rem 0 0 0;
     width: 18px; }
+    .blockData .blockDataBtn i {
+      line-height: 0;
+      font-size: 1.2rem; }
 
 .blockFooter {
-  border-bottom: 4px solid #FFFFFF;
+  border-top: 4px solid #FFFFFF;
   display: flex;
   flex-direction: column;
   padding: 1.6em 1em; }
   .blockFooter:last-of-type {
     border-bottom: 0; }
-  .blockFooter > p {
+  .blockFooter p {
     color: #FFFFFF;
     display: inline-block;
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -477,12 +495,6 @@ header {
     text-transform: uppercase;
     width: 85%; }
   .blockFooter .blockFooterBtn {
-    background-color: #FFFFFF;
-    border-radius: 500px;
-    color: #EE6B1E;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
     margin: 0.6em 0 0 auto;
     padding: 0.3em 1.2em 0.2em 1.2em; }
 
@@ -494,51 +506,56 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; }
-  .blockInfo h2 > span {
-    font-size: 65%; }
+  .blockInfo h2 span {
+    font-size: 65%;
+    letter-spacing: initial;
+    margin: 0 0 0 0.2em; }
   .blockInfo .blockInfoBtn {
-    background-color: #FFFFFF;
-    color: #EE6B1E;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-left: auto;
-    padding: 0;
+    padding: 0 0 0 0.2em;
     text-transform: uppercase; }
 
 .blockTitle {
   align-items: center;
   display: flex;
   justify-content: space-between; }
-  .blockTitle > .fa-chevron-down {
+  .blockTitle button {
+    background-color: #FFFFFF; }
+  .blockTitle .fa-chevron-down {
+    color: #EE6B1E;
     font-size: calc(2.8rem * 0.8);
     margin: 0 2px 0 0; }
 
+.barChart > p, .barChart > .barChartBar > p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-align: right; }
+  .barChart > p > span, .barChart > .barChartBar > p > span {
+    font-size: 65%;
+    letter-spacing: initial;
+    margin: 0 0 0 0.2em;
+    text-transform: uppercase; }
+
 .barChart {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   background-color: #EBEBEB;
   border-radius: 500px;
+  display: flex;
+  flex-direction: column;
   height: 40px;
-  margin: 3px 0 0 0;
-  padding: 0 10px;
-  position: relative;
+  justify-content: center;
+  margin: 2px 0 0 0;
   overflow: hidden;
+  padding: 0 0.8rem 0 0;
+  position: relative;
   width: 100%; }
   .barChart > p {
-    color: #777777;
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: right; }
-    .barChart > p > span {
-      font-size: 65%; }
+    color: #777777; }
   .barChart > .barChartBar {
+    bottom: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    bottom: 0;
     left: 0;
     position: absolute;
     right: 0;
@@ -551,15 +568,10 @@ header {
     .barChart > .barChartBar.text {
       background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%); }
     .barChart > .barChartBar > p {
-      margin-right: 10px;
       color: #FFFFFF;
-      font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1;
-      text-align: right;
-      transform-origin: right; }
-      .barChart > .barChartBar > p > span {
-        font-size: 65%; }
+      padding: 0 0.8rem 0 0;
+      transform-origin: right;
+      text-transform: uppercase; }
 
 .app {
   background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);

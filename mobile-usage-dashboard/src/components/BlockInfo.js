@@ -8,10 +8,10 @@ class BlockInfo extends Component {
       <div className="block blockInfo">
         <h3>{ title }</h3>
         <div>
-          <h2>{ body }&thinsp;{ unit ? <span>{ unit }</span> : null }</h2>
+          <h2>{ body }{ unit && <span>{ unit }</span> }</h2>
           { action ? 
             <button className="blockInfoBtn">
-              { action }&emsp;<i className="fas fa-play"></i>
+              { action }<i className="fas fa-play"></i>
             </button>
             : null }
         </div>

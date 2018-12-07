@@ -8,7 +8,7 @@ class BlockFooter extends Component {
           <p key={key}>{this.props.bodyCopy[key]}</p>
         ))}
         <button className="blockFooterBtn">
-          LEARN MORE&emsp;<i className="fas fa-play"></i>
+          LEARN MORE<i className="fas fa-play"></i>
         </button>
       </div>
     );
