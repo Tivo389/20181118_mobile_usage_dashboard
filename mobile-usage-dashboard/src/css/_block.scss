@@ -1,11 +1,30 @@
 %extendBtn {
   appearance: none;
+  border-radius: 500px;
   border: 0;
   font-family: $fontBody;
   line-height: 1;
-  & > i {
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+  // 999 CONTINUE HERE
+  // MEDIA QUERY BASED ON POINTER/TOUCH AND HOVER
+  & i {
+    margin: 0 0 0 0.4em;
     font-size: 80%;
   }
+  & i.fa-plus {
+    margin: 0;
+  }
+}
+
+%extendBtnPill {
+  background-color: $colorWhite;
+  color: $colorMain;
+  font-size: 1.2rem;
+  font-weight: $fontWeightMedium;
+  letter-spacing: 0.02em;
 }
 
 .block {
@@ -22,31 +41,37 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    & > h3 {
+    & + div {
+      margin: 1.6rem 0 0 0;
+    }
+    & h3 {
       flex: 1 0 auto;
     }
   }
   & .blockDataBtn {
     @extend %extendBtn;
     background-color: $colorMain;
-    border-radius: 500px;
     color: $colorWhite;
     font-weight: $fontWeightBold;
     height: 18px;
-    padding: 2px 0 0 0;
+    padding: 0.25rem 0 0 0;
     width: 18px;
+    & i {
+      line-height: 0;
+      font-size: 1.2rem;
+    }
   }
 }
 
 .blockFooter {
-  border-bottom: 4px solid $colorWhite;
+  border-top: 4px solid $colorWhite;
   display: flex;
   flex-direction: column;
   padding: 1.6em 1em;
   &:last-of-type {
     border-bottom: 0;
   }
-  & > p {
+  & p {
     color: $colorWhite;
     display: inline-block;
     font-family: $fontBody;
@@ -58,12 +83,7 @@
   }
   & .blockFooterBtn {
     @extend %extendBtn;
-    background-color: $colorWhite;
-    border-radius: 500px;
-    color: $colorMain;
-    font-size: 1.2rem;
-    font-weight: $fontWeightMedium;
-    letter-spacing: 0.02em;
+    @extend %extendBtnPill;
     margin: 0.6em 0 0 auto;
     padding: 0.3em 1.2em 0.2em 1.2em;
   }
@@ -78,18 +98,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  & h2 > span {
+  & h2 span {
     font-size: 65%;
+    letter-spacing: initial;
+    margin: 0 0 0 0.2em;
   }
   & .blockInfoBtn {
     @extend %extendBtn;
-    background-color: $colorWhite;
-    color: $colorMain;
-    font-size: 1.2rem;
-    font-weight: $fontWeightMedium;
-    letter-spacing: 0.02em;
-    margin-left: auto;
-    padding: 0;
+    @extend %extendBtnPill;
+    padding: 0 0 0 0.2em;
     text-transform: uppercase;
   }
 }
@@ -98,7 +115,12 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  & > .fa-chevron-down {
+  & button {   
+    @extend %extendBtn;
+    background-color: $colorWhite;
+  }
+  & .fa-chevron-down {
+    color: $colorMain;
     font-size: calc(#{$fontH2} * 0.8);
     margin: 0 2px 0 0;
   }

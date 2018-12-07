@@ -5,7 +5,9 @@ class BlockTitle extends Component {
     return (
       <div className="block blockTitle">
         <h2>{ this.props.title }</h2>
-        <i className="fas fa-chevron-down"></i>
+        <button>
+          <i className="fas fa-chevron-down"></i>
+        </button>
       </div>
     );
   }
