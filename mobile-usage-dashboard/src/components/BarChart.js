@@ -10,7 +10,7 @@ class BarChart extends Component {
         <h3>{ title }</h3>
         { amountFull !== "Unlimited" &&
           <button className="blockDataBtn">
-            <i className="fas fa-plus"></i>
+            <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
           </button>
         }
         <div className="barChart">

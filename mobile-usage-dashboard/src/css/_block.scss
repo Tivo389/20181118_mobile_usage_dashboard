@@ -6,10 +6,8 @@
   line-height: 1;
   padding: 0;
   &:focus {
-    outline: none;
+    outline: 0;
   }
-  // 999 CONTINUE HERE
-  // MEDIA QUERY BASED ON POINTER/TOUCH AND HOVER
   & i {
     margin: 0 0 0 0.4em;
     font-size: 80%;
@@ -19,12 +17,19 @@
   }
 }
 
-%extendBtnPill {
-  background-color: $colorWhite;
-  color: $colorMain;
-  font-size: 1.2rem;
-  font-weight: $fontWeightMedium;
-  letter-spacing: 0.02em;
+%extendBtnHover {
+  @include hover {
+    margin-left: -4px;
+    padding-left: 4px;
+    transform: translateX(4px);
+    &:active {
+      margin-top: -2px;
+      padding-top: 2px;
+      margin-left: -4px;
+      padding-left: 4px;
+      transform: translate(4px, 2px);
+    }
+  }
 }
 
 .block {
@@ -50,15 +55,26 @@
   }
   & .blockDataBtn {
     @extend %extendBtn;
+    align-items: center;
     background-color: $colorMain;
     color: $colorWhite;
+    display: flex;
     font-weight: $fontWeightBold;
     height: 18px;
-    padding: 0.25rem 0 0 0;
+    justify-content: center;
+    transition-duration: $transitionS;
     width: 18px;
-    & i {
-      line-height: 0;
-      font-size: 1.2rem;
+    & img {
+      display: block;
+      height: 12px;
+      width: 12px;
+    }
+    @include hover {
+      transform: rotateZ(180deg);
+      &:active {
+        transition-duration: initial;
+        transform: rotateZ(180deg) translateY(-2px);
+      }
     }
   }
 }
@@ -67,11 +83,13 @@
   border-top: 4px solid $colorWhite;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   padding: 1.6em 1em;
   &:last-of-type {
     border-bottom: 0;
   }
   & p {
+    margin-right: auto;
     color: $colorWhite;
     display: inline-block;
     font-family: $fontBody;
@@ -81,10 +99,17 @@
     text-transform: uppercase;
     width: 85%;
   }
+  & .btnHover {
+    @extend %extendBtnHover;
+  }
   & .blockFooterBtn {
     @extend %extendBtn;
-    @extend %extendBtnPill;
-    margin: 0.6em 0 0 auto;
+    background-color: $colorWhite;
+    color: $colorMain;
+    font-size: 1.2rem;
+    font-weight: $fontWeightMedium;
+    letter-spacing: 0.02em;
+    margin: 0.6em 0 0 0;
     padding: 0.3em 1.2em 0.2em 1.2em;
   }
 }
@@ -104,9 +129,14 @@
     margin: 0 0 0 0.2em;
   }
   & .blockInfoBtn {
+    @extend %extendBtnHover;
     @extend %extendBtn;
-    @extend %extendBtnPill;
-    padding: 0 0 0 0.2em;
+    background-color: $colorWhite;
+    color: $colorMain;
+    border-radius: 0;
+    font-size: 1.2rem;
+    font-weight: $fontWeightMedium;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
   }
 }
@@ -116,6 +146,7 @@
   display: flex;
   justify-content: space-between;
   & button {   
+    @extend %extendBtnHover;
     @extend %extendBtn;
     background-color: $colorWhite;
   }
