@@ -437,19 +437,24 @@ header {
   line-height: 1;
   padding: 0; }
   .blockData .blockDataBtn:focus, .blockFooter .blockFooterBtn:focus, .blockInfo .blockInfoBtn:focus, .blockTitle button:focus {
-    outline: none; }
+    outline: 0; }
   .blockData .blockDataBtn i, .blockFooter .blockFooterBtn i, .blockInfo .blockInfoBtn i, .blockTitle button i {
     margin: 0 0 0 0.4em;
     font-size: 80%; }
   .blockData .blockDataBtn i.fa-plus, .blockFooter .blockFooterBtn i.fa-plus, .blockInfo .blockInfoBtn i.fa-plus, .blockTitle button i.fa-plus {
     margin: 0; }
 
-.blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn {
-  background-color: #FFFFFF;
-  color: #EE6B1E;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.02em; }
+@media (any-hover: hover) {
+  .blockFooter .btnHover:hover, .blockInfo .blockInfoBtn:hover, .blockTitle button:hover {
+    margin-left: -4px;
+    padding-left: 4px;
+    transform: translateX(4px); }
+    .blockFooter .btnHover:hover:active, .blockInfo .blockInfoBtn:hover:active, .blockTitle button:hover:active {
+      margin-top: -2px;
+      padding-top: 2px;
+      margin-left: -4px;
+      padding-left: 4px;
+      transform: translate(4px, 2px); } }
 
 .block {
   padding: 22px 10px 14px 10px;
@@ -468,24 +473,36 @@ header {
     .blockData > div h3 {
       flex: 1 0 auto; }
   .blockData .blockDataBtn {
-    background-color: #EE6B1E;
+    align-items: center;
+    background-color: #ee6b1e;
     color: #FFFFFF;
+    display: flex;
     font-weight: 900;
     height: 18px;
-    padding: 0.25rem 0 0 0;
+    justify-content: center;
+    transition-duration: 0.3s;
     width: 18px; }
-    .blockData .blockDataBtn i {
-      line-height: 0;
-      font-size: 1.2rem; }
+    .blockData .blockDataBtn img {
+      display: block;
+      height: 12px;
+      width: 12px; }
+    @media (any-hover: hover) {
+      .blockData .blockDataBtn:hover {
+        transform: rotateZ(180deg); }
+        .blockData .blockDataBtn:hover:active {
+          transition-duration: initial;
+          transform: rotateZ(180deg) translateY(-2px); } }
 
 .blockFooter {
   border-top: 4px solid #FFFFFF;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   padding: 1.6em 1em; }
   .blockFooter:last-of-type {
     border-bottom: 0; }
   .blockFooter p {
+    margin-right: auto;
     color: #FFFFFF;
     display: inline-block;
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -495,7 +512,12 @@ header {
     text-transform: uppercase;
     width: 85%; }
   .blockFooter .blockFooterBtn {
-    margin: 0.6em 0 0 auto;
+    background-color: #FFFFFF;
+    color: #ee6b1e;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin: 0.6em 0 0 0;
     padding: 0.3em 1.2em 0.2em 1.2em; }
 
 .blockInfo {
@@ -511,7 +533,12 @@ header {
     letter-spacing: initial;
     margin: 0 0 0 0.2em; }
   .blockInfo .blockInfoBtn {
-    padding: 0 0 0 0.2em;
+    background-color: #FFFFFF;
+    color: #ee6b1e;
+    border-radius: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     text-transform: uppercase; }
 
 .blockTitle {
@@ -521,7 +548,7 @@ header {
   .blockTitle button {
     background-color: #FFFFFF; }
   .blockTitle .fa-chevron-down {
-    color: #EE6B1E;
+    color: #ee6b1e;
     font-size: calc(2.8rem * 0.8);
     margin: 0 2px 0 0; }
 
