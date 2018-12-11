@@ -47,7 +47,7 @@
     &.text {
       background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%);
     }
-    & > p {
+    & p {
       @extend %extendText;
       color: $colorWhite;
       padding: 0 0.8rem 0 0;

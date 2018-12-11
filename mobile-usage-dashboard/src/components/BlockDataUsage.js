@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BarChart from './BarChart';
 
-class BlockData extends Component {
+class BlockDataUsage extends Component {
   render() {
     return (
       <div className="block blockData">
@@ -9,20 +9,23 @@ class BlockData extends Component {
           title="Data"
           amountFull="250"
           amountCurrent="169"
-          unit="mb"></BarChart>
+          unit="mb"
+          showAddBtn="true"></BarChart>
         <BarChart
           title="Talk / Canada"
           amountFull="100"
           amountCurrent="32"
-          unit="min"></BarChart>
+          unit="min"
+          showAddBtn="true"></BarChart>
         <BarChart
           title="Text / Canada &amp; USA"
           amountFull="Unlimited"
           amountCurrent="Unlimited"
-          unit=""></BarChart>              
+          unit=""
+          showAddBtn="false"></BarChart>              
       </div>
     );
   }
 }
 
-export default BlockData;
+export default BlockDataUsage;

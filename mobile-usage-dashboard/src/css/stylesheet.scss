@@ -3,12 +3,10 @@
 @import '_normalizeCustomConfig';
 @import '_variable';
 @import '_font';
-@import '_debugger';
-@import '_mediaQuery';
+@import '_mixins';
 
 @import '_header';
 @import '_navTabs';
-@import '_bodyUsage';
 @import '_block';
 @import '_barChart';
 
@@ -22,4 +20,8 @@
   @include desktop {
     flex-direction: initial;
   }
+}
+
+.body {
+  background-color: $colorWhite;
 }
