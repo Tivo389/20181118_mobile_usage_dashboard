@@ -320,8 +320,8 @@ h1 {
   font-size: calc(1.6rem * 4.48); }
 
 h2 {
-  font-size: 2.8rem;
-  letter-spacing: -0.1rem;
+  font-size: 2.6rem;
+  letter-spacing: -0.08rem;
   font-weight: 700; }
 
 h3 {
@@ -361,16 +361,6 @@ a {
     font-size: 70.5%; }
   h1, h2, h3, h4, h5, h6, p, a {
     line-height: 135%; } }
-
-.debug {
-  border: 1px dashed #FF0000 !important; }
-
-.debugAll {
-  all: unset !important;
-  border: 1px dashed #00C8FF !important; }
-
-.hidden {
-  display: none !important; }
 
 header {
   min-height: 44px;
@@ -426,9 +416,6 @@ header {
     .navTab.active > p {
       color: #427AC6; }
 
-.body {
-  background-color: #FFFFFF; }
-
 .blockData .blockDataBtn, .blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn, .blockTitle button {
   appearance: none;
   border-radius: 500px;
@@ -459,15 +446,19 @@ header {
 .block {
   padding: 22px 10px 14px 10px;
   border-bottom: 1px solid #cccccc; }
+  .block .block {
+    padding: 11px 0 0 0; }
   .block:last-of-type {
     border-bottom: 0; }
 
 .blockData {
+  flex-direction: column;
   padding-bottom: 22px; }
   .blockData > div {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 100%; }
     .blockData > div + div {
       margin: 1.6rem 0 0 0; }
     .blockData > div h3 {
@@ -549,16 +540,16 @@ header {
     background-color: #FFFFFF; }
   .blockTitle .fa-chevron-down {
     color: #ee6b1e;
-    font-size: calc(2.8rem * 0.8);
+    font-size: calc(2.6rem * 0.8);
     margin: 0 2px 0 0; }
 
-.barChart > p, .barChart > .barChartBar > p {
+.barChart > p, .barChart > .barChartBar p {
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
   text-align: right; }
-  .barChart > p > span, .barChart > .barChartBar > p > span {
+  .barChart > p > span, .barChart > .barChartBar p > span {
     font-size: 65%;
     letter-spacing: initial;
     margin: 0 0 0 0.2em;
@@ -594,7 +585,7 @@ header {
       background-image: linear-gradient(-270deg, #068394 0%, #09E0A0 100%); }
     .barChart > .barChartBar.text {
       background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%); }
-    .barChart > .barChartBar > p {
+    .barChart > .barChartBar p {
       color: #FFFFFF;
       padding: 0 0.8rem 0 0;
       transform-origin: right;
@@ -610,3 +601,6 @@ header {
   @media (min-width: 1024px) {
     .app {
       flex-direction: initial; } }
+
+.body {
+  background-color: #FFFFFF; }

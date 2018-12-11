@@ -10,7 +10,7 @@ $fontWeightBold: 900;
 
 $fontP: 1.6rem;                     // BODY TEXT
 $fontH1: calc(#{$fontP} * 4.48);    // PAGE BANNER
-$fontH2: 2.8rem;                    // BLOCK TITLE
+$fontH2: 2.6rem;                    // BLOCK TITLE
 $fontH3: 1.4rem;                    // BLOCK SUBTITLE
 $fontH4: calc(#{$fontP} * 1.83);    // ARTICLE MAIN HEADER
 $fontH5: calc(#{$fontP} * 1.35);    // ARTICLE SUB HEADER
@@ -39,7 +39,7 @@ h1 {
 
 h2 {
   font-size: $fontH2;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.08rem;
   font-weight: $fontWeightMedium;
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BlockData from './BlockData';
+import BlockDataUsage from './BlockDataUsage';
 import BlockInfo from './BlockInfo';
 import BlockTitle from './BlockTitle';
 
@@ -12,7 +12,7 @@ class BodyUsage extends Component {
           body="771-513-5175"
           unit=""
           action=""></BlockInfo>
-        <BlockData></BlockData>
+        <BlockDataUsage></BlockDataUsage>
         <BlockInfo
           title="Next Billing Cycle In"
           body="12"
@@ -28,8 +28,7 @@ class BodyUsage extends Component {
           body="Home 250"
           unit="MB"
           action="Change Plan"></BlockInfo>
-        <BlockTitle
-          title="Usage History"></BlockTitle>
+        <BlockTitle title="Usage History"></BlockTitle>
       </main>
     );
   }
