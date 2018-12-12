@@ -33,10 +33,10 @@
 }
 
 .block {
-  padding: 22px 10px 14px 10px;
+  padding: 14px 10px;
   border-bottom: 1px solid $colorLightGray;
   .block {
-    padding: 11px 0 0 0;  // - To cater for 'BlockPlanInfo.js'
+    padding: 10px 0 8px 0;  // - To cater for 'BlockPlanInfo.js'
   }
   &:last-of-type {
     border-bottom: 0;
@@ -112,7 +112,7 @@
     background-color: $colorWhite;
     color: $colorMain;
     font-size: 1.2rem;
-    font-weight: $fontWeightMedium;
+    font-weight: $fontWeightBold;
     letter-spacing: 0.02em;
     margin: 0.6em 0 0 0;
     padding: 0.3em 1.2em 0.2em 1.2em;
@@ -140,9 +140,34 @@
     color: $colorMain;
     border-radius: 0;
     font-size: 1.2rem;
-    font-weight: $fontWeightMedium;
+    font-weight: $fontWeightBold;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+  }
+}
+
+.blockTextList {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    & > li {
+      color: $colorBlack;
+      font-family: $fontBody;
+      font-size: $fontH3;
+      font-weight: $fontWeightRegular;
+      margin: 0;
+      padding: 0.2em 0 0 0;
+      &:last-child {
+        padding: 0.2em 0 0.4em 0;
+      }
+      & span.level1 {
+        margin: 0 0.4em 0 0;
+      }
+      & span.level2 {
+        margin: 0 0.4em 0 1em;
+      }
+    }
   }
 }
 

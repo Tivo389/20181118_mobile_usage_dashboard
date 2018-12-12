@@ -2,20 +2,24 @@ import React, { Component } from 'react';
 import BlockInfo from './BlockInfo';
 import BlockPlanInfo from './BlockPlanInfo';
 import BlockTitle from './BlockTitle';
-import BlockText from './BlockText';
+import BlockTextList from './BlockTextList ';
 
 class BodyUsage extends Component {
-  planFeatures = {
-    // 999
-// - Voicemail
-// - Call Control
-// - Caller ID
-// - Missedn Call Alerts
-//    - Conference Calling
-//    - Call Forwarding
-//    - Call Waiting
-// - Access 100,000+ Wifi Hotspots
-  };
+  planFeatures = [
+    { level: 1, item: "Voicemail" }, 
+    { level: 1, item: "Call Control"},
+    { level: 2, item: "Caller ID"},
+    { level: 2, item: "Missed Call Alerts"},
+    { level: 2, item: "Conference Calling"},
+    { level: 2, item: "Call Forwarding"},
+    { level: 2, item: "Call Waiting"},
+    { level: 1, item: "Access to 100,000+ Wifi Hotspots" } 
+  ];
+  payPerUseRates = [
+    { level: 1, item: "15¢/min Canada & US" }, 
+    { level: 1, item: "5¢/text Canada & US & Global"},
+    { level: 1, item: "5¢/MB Data" } 
+  ];
   render() {
     return (
       <main className="body bodyPlanAndBills">
@@ -24,9 +28,12 @@ class BodyUsage extends Component {
           body="Home 250"
           unit="MB"
           action="Change Plan"></BlockPlanInfo>
-        <BlockText
+        <BlockTextList
           title="Additional Plan Features"
-          text={this.planFeatures}></BlockText> 
+          listArray={this.planFeatures}></BlockTextList> 
+        <BlockTextList
+          title="Pay Per Use Rates"
+          listArray={this.payPerUseRates}></BlockTextList> 
         <BlockInfo
           title="Next Billing Cycle In"
           body="12"

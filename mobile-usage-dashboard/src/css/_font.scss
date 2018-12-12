@@ -5,8 +5,8 @@ $fontBody: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fontCondensed: "Roboto Condensed", "Arial Narrow", sans-serif;
 
 $fontWeightRegular: 400;
-$fontWeightMedium: 700;
-$fontWeightBold: 900;
+$fontWeightMedium: 500;
+$fontWeightBold: 700;
 
 $fontP: 1.6rem;                     // BODY TEXT
 $fontH1: calc(#{$fontP} * 4.48);    // PAGE BANNER
@@ -39,13 +39,13 @@ h1 {
 
 h2 {
   font-size: $fontH2;
+  font-weight: $fontWeightBold;
   letter-spacing: -0.08rem;
-  font-weight: $fontWeightMedium;
 }
 
 h3 {
   font-size: $fontH3;
-  font-weight: $fontWeightRegular;
+  font-weight: $fontWeightMedium;
   text-transform: uppercase;
 }
 

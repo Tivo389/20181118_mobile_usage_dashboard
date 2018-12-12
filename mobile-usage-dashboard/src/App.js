@@ -6,7 +6,6 @@ import {
   BodyPlanAndBills,
   Footer
 } from './components';
-
 import './css/stylesheet.css';
 
 class App extends Component {
@@ -16,7 +15,7 @@ class App extends Component {
         <Header></Header>
         <NavTabs></NavTabs>
         <div id="main">
-          {/* <BodyUsage></BodyUsage> */}
+          <BodyUsage></BodyUsage>
           <BodyPlanAndBills></BodyPlanAndBills>
         </div>
         <Footer></Footer>
