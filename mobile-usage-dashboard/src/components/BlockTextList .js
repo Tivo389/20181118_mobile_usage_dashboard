@@ -4,7 +4,6 @@ class BlockTextList extends Component {
 
   render() {
     const { title, listArray } = this.props;
-    console.log(listArray);
     return (
       <div className="block blockTextList">
         <h3>{ title }</h3>
