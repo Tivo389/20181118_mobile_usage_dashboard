@@ -21,6 +21,7 @@ class BarChart extends Component {
               { amountCurrent }
               { unit !== "" && <span>{ unit }</span> }
             </p>
+            {/* 999 Continue here */}
           </div>
           <p>
             { amountFull }

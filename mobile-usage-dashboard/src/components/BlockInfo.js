@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class BlockInfo extends Component {
 
   render() {
-    const { title, body, unit, action } = this.props;
+    const { title, body, unit, action, info } = this.props;
     return (
       <div className="block blockInfo">
         <h3>{ title }</h3>
@@ -15,6 +15,7 @@ class BlockInfo extends Component {
             </button>
             : null }
         </div>
+        { info && <p className="blockInfoText">{ info }</p> }
       </div>
     );
   }
