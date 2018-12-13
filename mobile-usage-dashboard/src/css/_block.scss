@@ -1,3 +1,11 @@
+%extendBlockText {
+  color: $colorBlack;
+  font-family: $fontBody;
+  font-size: $fontH3;
+  font-weight: $fontWeightRegular;
+  margin: 0.6em 0 0 0;
+}
+
 %extendBtn {
   appearance: none;
   border-radius: 500px;
@@ -148,6 +156,13 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
+  & .blockInfoText {
+    @extend %extendBlockText;
+    margin: 0.6em 0 0 0;
+    &:last-child {
+      margin: 0.6em 0 0.3em 0;
+    }
+  }
 }
 
 .blockTextList {
@@ -156,10 +171,7 @@
     margin: 0;
     padding: 0;
     & > li {
-      color: $colorBlack;
-      font-family: $fontBody;
-      font-size: $fontH3;
-      font-weight: $fontWeightRegular;
+      @extend %extendBlockText;
       margin: 0;
       padding: 0.2em 0 0 0;
       &:last-child {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BarChart from './BarChart';
 
-class BlockDataUsage extends Component {
+class BlockPlanUsage extends Component {
   render() {
     return (
       <div className="block blockData">
@@ -28,4 +28,4 @@ class BlockDataUsage extends Component {
   }
 }
 
-export default BlockDataUsage;
+export default BlockPlanUsage;

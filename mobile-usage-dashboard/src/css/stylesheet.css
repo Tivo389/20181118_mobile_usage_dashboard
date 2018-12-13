@@ -412,6 +412,13 @@ header {
     .navTab.active > p {
       color: #427AC6; }
 
+.blockInfo .blockInfoText, .blockTextList ul > li {
+  color: #474747;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0.6em 0 0 0; }
+
 .blockData .blockDataBtn, .blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn, .blockTitle button {
   appearance: none;
   border-radius: 500px;
@@ -529,16 +536,16 @@ header {
     font-weight: 700;
     letter-spacing: 0.02em;
     text-transform: uppercase; }
+  .blockInfo .blockInfoText {
+    margin: 0.6em 0 0 0; }
+    .blockInfo .blockInfoText:last-child {
+      margin: 0.6em 0 0.3em 0; }
 
 .blockTextList ul {
   list-style-type: none;
   margin: 0;
   padding: 0; }
   .blockTextList ul > li {
-    color: #474747;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
     margin: 0;
     padding: 0.2em 0 0 0; }
     .blockTextList ul > li:last-child {
