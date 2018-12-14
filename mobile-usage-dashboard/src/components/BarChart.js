@@ -2,32 +2,43 @@ import React, { Component } from 'react';
 
 class BarChart extends Component {
   render() {
-    const { title, amountFull, amountCurrent, unit, showAddBtn } = this.props;
-    const barWidth = amountCurrent/amountFull || null;
-    const scaleFix = amountFull/amountCurrent || null;
+    const {
+      title,
+      amountFull:amtFull,
+      amountCurrent:amtCur,
+      unit,
+      showBarChartBtnSm:btnSm,
+      showBarChartBtnLg:btnLg
+    } = this.props;
+    const barWidth = amtCur/amtFull || null;
+    const scaleFix = amtFull/amtCur || null;
     return (
-      <div>
+      <div className="barChartContainer">
         <h3>{ title }</h3>
-        { showAddBtn === "true" &&
-          <button className="blockDataBtn">
+        { btnSm === true &&
+          <button className="barChartBtnSm">
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
           </button>
         }
-        <div className="barChart">
+        <div className="barChart" data-name="barChart">
           <div
             className={`barChartBar ${title.toLowerCase()}`}
             style={{transform: `scaleX(${barWidth})`}}>
             <p style={{transform: `scaleX(${scaleFix})`}}>
-              { amountCurrent }
+              { amtCur }
               { unit !== "" && <span>{ unit }</span> }
             </p>
-            {/* 999 Continue here */}
           </div>
           <p>
-            { amountFull }
+            { amtFull }
             { unit !== "" && <span>{ unit }</span> }
           </p>
         </div>
+        { btnLg === true &&
+          <button className="barChartBtnLg">
+            <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
+          </button>
+        }        
       </div>
     );
   }

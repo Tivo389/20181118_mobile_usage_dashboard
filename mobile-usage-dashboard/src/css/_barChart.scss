@@ -12,6 +12,44 @@
   }
 }
 
+.barChartContainer [class^="barChartBtn"] {
+  @extend %extendBtn;
+  align-items: center;
+  background-color: $colorMain;
+  color: $colorWhite;
+  display: flex;
+  font-weight: $fontWeightBold;
+  justify-content: center;
+  transition-duration: $transitionS;
+  @include hover {
+    transform: rotateZ(180deg);
+    &:active {
+      transition-duration: initial;
+      transform: rotateZ(180deg) translateY(-2px);
+    }
+  }
+}
+
+.barChartContainer .barChartBtnSm {
+  height: 18px;
+  width: 18px;
+  & img {
+    display: block;
+    height: 12px;
+    width: 12px;
+  }
+}
+
+.barChartContainer .barChartBtnLg {
+  height: 40px;
+  width: 40px;
+  & img {
+    display: block;
+    height: 22px;
+    width: 22px;
+  }
+}
+
 .barChart {
   background-color: #EBEBEB;
   border-radius: 500px;
@@ -24,11 +62,14 @@
   padding: 0 0.8rem 0 0;
   position: relative;
   width: 100%;
+  &.caterBtnLg {
+    width: calc(100% - 52px);
+  }
   & > p {
     @extend %extendText;
     color: $colorGray;
   }
-  & > .barChartBar {
+  & .barChartBar {
     bottom: 0;
     display: flex;
     flex-direction: column;

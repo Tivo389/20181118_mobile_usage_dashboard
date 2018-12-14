@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import BarChart from './BarChart';
 
 class BlockPlanUsage extends Component {
+  showBtnSm=true;
+  showBtnLg=true;
+
+  componentWillMount() {
+    // window.location.pathname
+    // if ()
+    // CONTINUE HERE
+    // check the path, and turn on and off the btns.
+    // 999
+  }
+
   render() {
     return (
       <div className="block blockData">
@@ -10,19 +21,22 @@ class BlockPlanUsage extends Component {
           amountFull="250"
           amountCurrent="169"
           unit="mb"
-          showAddBtn="true"></BarChart>
+          showBarChartBtnSm={this.showBtnSm}
+          showBarChartBtnLg={this.showBtnLg}></BarChart>
         <BarChart
           title="Talk / Canada"
           amountFull="100"
           amountCurrent="32"
           unit="min"
-          showAddBtn="true"></BarChart>
+          showBarChartBtnSm={this.showBtnSm}
+          showBarChartBtnLg={this.showBtnLg}></BarChart>
         <BarChart
           title="Text / Canada &amp; USA"
           amountFull="Unlimited"
           amountCurrent="Unlimited"
           unit=""
-          showAddBtn="false"></BarChart>              
+          showBarChartBtnSm={this.showBtnSm}
+          showBarChartBtnLg={this.showBtnLg}></BarChart>              
       </div>
     );
   }
