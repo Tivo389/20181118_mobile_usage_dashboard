@@ -1,0 +1,54 @@
+// MEDIA QUERY SETTINGS ---------------------------------------------------------------------------
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
+@mixin tablet {
+  @media #{$tablet} {
+    @content;
+  }
+}
+@mixin desktop {
+  @media #{$desktop} {
+    @content;
+  }
+}
+@mixin hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+%extendBtn {
+  appearance: none;
+  border-radius: 500px;
+  border: 0;
+  font-family: $fontBody;
+  line-height: 1;
+  padding: 0;
+  &:focus {
+    outline: 0;
+  }
+  & i {
+    margin: 0 0 0 0.4em;
+    font-size: 80%;
+  }
+  & i.fa-plus {
+    margin: 0;
+  }
+}
+
+%extendBtnHover {
+  @include hover {
+    margin-left: -4px;
+    padding-left: 4px;
+    transform: translateX(4px);
+    &:active {
+      margin-top: -2px;
+      padding-top: 2px;
+      margin-left: -4px;
+      padding-left: 4px;
+      transform: translate(4px, 2px);
+    }
+  }
+}

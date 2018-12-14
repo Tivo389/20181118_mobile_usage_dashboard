@@ -358,6 +358,33 @@ a {
   html {
     font-size: 70.5%; } }
 
+.blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn, .blockTitle button, .barChartContainer [class^="barChartBtn"] {
+  appearance: none;
+  border-radius: 500px;
+  border: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1;
+  padding: 0; }
+  .blockFooter .blockFooterBtn:focus, .blockInfo .blockInfoBtn:focus, .blockTitle button:focus, .barChartContainer :focus[class^="barChartBtn"] {
+    outline: 0; }
+  .blockFooter .blockFooterBtn i, .blockInfo .blockInfoBtn i, .blockTitle button i, .barChartContainer [class^="barChartBtn"] i {
+    margin: 0 0 0 0.4em;
+    font-size: 80%; }
+  .blockFooter .blockFooterBtn i.fa-plus, .blockInfo .blockInfoBtn i.fa-plus, .blockTitle button i.fa-plus, .barChartContainer [class^="barChartBtn"] i.fa-plus {
+    margin: 0; }
+
+@media (any-hover: hover) {
+  .blockFooter .btnHover:hover, .blockInfo .blockInfoBtn:hover, .blockTitle button:hover {
+    margin-left: -4px;
+    padding-left: 4px;
+    transform: translateX(4px); }
+    .blockFooter .btnHover:hover:active, .blockInfo .blockInfoBtn:hover:active, .blockTitle button:hover:active {
+      margin-top: -2px;
+      padding-top: 2px;
+      margin-left: -4px;
+      padding-left: 4px;
+      transform: translate(4px, 2px); } }
+
 header {
   min-height: 44px;
   min-width: 100%;
@@ -419,33 +446,6 @@ header {
   font-weight: 400;
   margin: 0.6em 0 0 0; }
 
-.blockData .blockDataBtn, .blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn, .blockTitle button {
-  appearance: none;
-  border-radius: 500px;
-  border: 0;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1;
-  padding: 0; }
-  .blockData .blockDataBtn:focus, .blockFooter .blockFooterBtn:focus, .blockInfo .blockInfoBtn:focus, .blockTitle button:focus {
-    outline: 0; }
-  .blockData .blockDataBtn i, .blockFooter .blockFooterBtn i, .blockInfo .blockInfoBtn i, .blockTitle button i {
-    margin: 0 0 0 0.4em;
-    font-size: 80%; }
-  .blockData .blockDataBtn i.fa-plus, .blockFooter .blockFooterBtn i.fa-plus, .blockInfo .blockInfoBtn i.fa-plus, .blockTitle button i.fa-plus {
-    margin: 0; }
-
-@media (any-hover: hover) {
-  .blockFooter .btnHover:hover, .blockInfo .blockInfoBtn:hover, .blockTitle button:hover {
-    margin-left: -4px;
-    padding-left: 4px;
-    transform: translateX(4px); }
-    .blockFooter .btnHover:hover:active, .blockInfo .blockInfoBtn:hover:active, .blockTitle button:hover:active {
-      margin-top: -2px;
-      padding-top: 2px;
-      margin-left: -4px;
-      padding-left: 4px;
-      transform: translate(4px, 2px); } }
-
 .block {
   padding: 12px 10px;
   border-bottom: 1px solid #cccccc; }
@@ -467,27 +467,7 @@ header {
     .blockData > div + div {
       margin: 1.6rem 0 0 0; }
     .blockData > div h3 {
-      flex: 1 0 auto; }
-  .blockData .blockDataBtn {
-    align-items: center;
-    background-color: #ee6b1e;
-    color: #FFFFFF;
-    display: flex;
-    font-weight: 700;
-    height: 18px;
-    justify-content: center;
-    transition-duration: 0.3s;
-    width: 18px; }
-    .blockData .blockDataBtn img {
-      display: block;
-      height: 12px;
-      width: 12px; }
-    @media (any-hover: hover) {
-      .blockData .blockDataBtn:hover {
-        transform: rotateZ(180deg); }
-        .blockData .blockDataBtn:hover:active {
-          transition-duration: initial;
-          transform: rotateZ(180deg) translateY(-2px); } }
+      flex: 1 0 calc(100% - 18px); }
 
 .blockFooter {
   border-bottom: 4px solid #FFFFFF;
@@ -566,17 +546,48 @@ header {
     font-size: calc(2.6rem * 0.8);
     margin: 0 2px 0 0; }
 
-.barChart > p, .barChart > .barChartBar p {
+.barChart > p, .barChart .barChartBar p {
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
   text-align: right; }
-  .barChart > p > span, .barChart > .barChartBar p > span {
+  .barChart > p > span, .barChart .barChartBar p > span {
     font-size: 65%;
     letter-spacing: initial;
     margin: 0 0 0 0.2em;
     text-transform: uppercase; }
+
+.barChartContainer [class^="barChartBtn"] {
+  align-items: center;
+  background-color: #ee6b1e;
+  color: #FFFFFF;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  transition-duration: 0.3s; }
+  @media (any-hover: hover) {
+    .barChartContainer [class^="barChartBtn"]:hover {
+      transform: rotateZ(180deg); }
+      .barChartContainer [class^="barChartBtn"]:hover:active {
+        transition-duration: initial;
+        transform: rotateZ(180deg) translateY(-2px); } }
+
+.barChartContainer .barChartBtnSm {
+  height: 18px;
+  width: 18px; }
+  .barChartContainer .barChartBtnSm img {
+    display: block;
+    height: 12px;
+    width: 12px; }
+
+.barChartContainer .barChartBtnLg {
+  height: 40px;
+  width: 40px; }
+  .barChartContainer .barChartBtnLg img {
+    display: block;
+    height: 22px;
+    width: 22px; }
 
 .barChart {
   background-color: #EBEBEB;
@@ -590,9 +601,11 @@ header {
   padding: 0 0.8rem 0 0;
   position: relative;
   width: 100%; }
+  .barChart.caterBtnLg {
+    width: calc(100% - 52px); }
   .barChart > p {
     color: #777777; }
-  .barChart > .barChartBar {
+  .barChart .barChartBar {
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -602,13 +615,13 @@ header {
     right: 0;
     top: 0;
     transform-origin: left; }
-    .barChart > .barChartBar.data {
+    .barChart .barChartBar.data {
       background-image: linear-gradient(-270deg, #5F00A3 0%, #F000B4 100%); }
-    .barChart > .barChartBar.talk {
+    .barChart .barChartBar.talk {
       background-image: linear-gradient(-270deg, #068394 0%, #09E0A0 100%); }
-    .barChart > .barChartBar.text {
+    .barChart .barChartBar.text {
       background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%); }
-    .barChart > .barChartBar p {
+    .barChart .barChartBar p {
       color: #FFFFFF;
       padding: 0 0.8rem 0 0;
       transform-origin: right;
