@@ -344,11 +344,11 @@ p {
   line-height: 125%; }
 
 a {
+  text-decoration: none;
   font-size: 1.6rem; }
   a:visited, a:focus, a:active {
     color: #474747;
-    outline: none;
-    text-decoration: none; }
+    outline: none; }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   html {

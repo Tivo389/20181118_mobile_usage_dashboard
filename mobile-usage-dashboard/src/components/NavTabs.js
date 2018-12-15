@@ -4,15 +4,15 @@ class ComponentTemplate extends Component {
   render() {
     return (
       <div className="navTabs">
-        <div className="navTab active">
+        <a className="navTab active" href="usage.html">
           <p>USAGE</p>
-        </div>
-        <div className="navTab">
+        </a>
+        <a className="navTab" href="planAndBill.html">
           <p>PLANS &amp; BILLS</p>
-        </div>
-        <div className="navTab">
+        </a>
+        <a className="navTab" href="addons.html">
           <p>ADDONS</p>
-        </div>
+        </a>
       </div>
     );
   }
