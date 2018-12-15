@@ -68,11 +68,11 @@ p {
 }
 
 a {
+  text-decoration: none;
   font-size: $fontP;
   &:visited, &:focus, &:active {
     color: $colorBlack;
     outline: none;
-    text-decoration: none;
   }
 }
 

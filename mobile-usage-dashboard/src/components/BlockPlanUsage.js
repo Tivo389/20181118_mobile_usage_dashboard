@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import BarChart from './BarChart';
 
 class BlockPlanUsage extends Component {
-  showBtnSm=true;
-  showBtnLg=true;
+  showBtnSm = false;
+  showBtnLg = false;
 
   componentWillMount() {
     // window.location.pathname
