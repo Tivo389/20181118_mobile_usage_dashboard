@@ -13,15 +13,9 @@ import './css/stylesheet.css';
 class App extends Component {
   history = createBrowserHistory();
 
-  // constructor(props) {
-  //   super(props);
-  //   this.getHref = this.getHref.bind(this);
-  // }
-
   componentDidMount() {
     const allAnchors = Array.from(document.querySelectorAll('a'));
     console.log(allAnchors);
-    // Take a note of this 999 binding methods
     allAnchors.forEach(anchor => anchor.addEventListener('click', this.getHref.bind(this)));
   }
 
@@ -41,20 +35,18 @@ class App extends Component {
   }
 
   getHref = (e) => {
-    console.log("clicked!");
-    console.log(e);
-    debugger;
-    // let el = e.target;
-    // while (el && !el.href) {
-    //   el = el.parentNode;
-    // }
-    // if (el) {
-    //   e.preventDefault();
-    //   debugger;
-      // this.history.push(el.href); // Modify current url to become url of link.
-      // debugger;
+    let target = e.target;
+    // Since you might have clicked on a <p> or <img> element inside the <a> tag.
+    // 01: Keep bubbling up until you reach the <a> element.
+    while (target && !target.href) {
+      target = target.parentNode;
+    }
+    // 02: Once you have the <a> tag, update current urlPath.
+    if (target) {
+      e.preventDefault();
+      this.history.push(target.getAttribute('href'), null);
       // changePage();
-    // }
+    }
   }
 }
 
