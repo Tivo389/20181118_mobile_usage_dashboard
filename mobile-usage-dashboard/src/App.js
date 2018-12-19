@@ -12,29 +12,41 @@ import './css/stylesheet.css';
 
 class App extends Component {
   history = createBrowserHistory();
+  state = {
+    activeSection: "usage"
+  };
 
   componentDidMount() {
     const allAnchors = Array.from(document.querySelectorAll('a'));
-    console.log(allAnchors);
-    allAnchors.forEach(anchor => anchor.addEventListener('click', this.getHref.bind(this)));
+    allAnchors.forEach(anchor => anchor.addEventListener('click', this.updateURL.bind(this)));
   }
 
+  componentWillUpdate() {}
+
   render() {
+    const activeSection = this.assignActiveSection();
     return (
       <div id="app" className="app">
         <Header></Header>
-        <NavTabs></NavTabs>
+        <NavTabs activeSection={this.state.activeSection}></NavTabs>
         <div id="main">
-          <BodyUsage></BodyUsage>
-          {/* <BodyPlanAndBills></BodyPlanAndBills> */}
-          {/* <BodyAddons></BodyAddons> */}
+          { activeSection }                  
         </div>
         <Footer></Footer>
       </div>
     );
   }
 
-  getHref = (e) => {
+  assignActiveSection() {
+    switch (this.state.activeSection) {
+      case 'USAGE': return <BodyUsage></BodyUsage>; break;
+      case 'PLANANDBILL': return <BodyPlanAndBills></BodyPlanAndBills>; break;
+      case 'ADDONS': return <BodyAddons></BodyAddons>; break;
+      default: return <BodyUsage></BodyUsage>;
+    }
+  }    
+
+  updateURL = (e) => {
     let target = e.target;
     // Since you might have clicked on a <p> or <img> element inside the <a> tag.
     // 01: Keep bubbling up until you reach the <a> element.
@@ -44,8 +56,11 @@ class App extends Component {
     // 02: Once you have the <a> tag, update current urlPath.
     if (target) {
       e.preventDefault();
-      this.history.push(target.getAttribute('href'), null);
-      // changePage();
+      const href = target.getAttribute('href');
+      this.history.push(href, null);
+      this.setState({
+        activeSection: href.slice(0, href.length-5).toLowerCase()
+      });
     }
   }
 }
