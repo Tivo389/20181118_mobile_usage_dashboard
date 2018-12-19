@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
+import NavTab from './NavTab';
 
-class ComponentTemplate extends Component {
+class NavTabs extends Component {
   render() {
     return (
       <div className="navTabs">
-        <a className="navTab active" href="usage.html">
-          <p>USAGE</p>
-        </a>
-        <a className="navTab" href="planAndBill.html">
-          <p>PLANS &amp; BILLS</p>
-        </a>
-        <a className="navTab" href="addons.html">
-          <p>ADDONS</p>
-        </a>
+        <NavTab
+          body="USAGE"
+          activeSection={this.props.activeSection}
+          href="usage.html">
+        </NavTab>
+        <NavTab
+          body="PLANS &amp; BILLS"
+          activeSection={this.props.activeSection}
+          href="planAndBill.html">
+        </NavTab>
+        <NavTab
+          body="ADDONS"
+          activeSection={this.props.activeSection}
+          href="addons.html"
+        ></NavTab>
       </div>
     );
   }
 }
 
-export default ComponentTemplate;
+export default NavTabs;
