@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
 
 class NavTab extends Component {
-  activeTab = false;
-  className = null;  // ternary here?
-
-  componentWillMount() {
-    const { href, activeSection } = this.props;
-    this.activeTab = href.includes(activeSection);
-    // 999
-    // COntinue here, set the calss name ad make the tabs active
-  }
-
-  componentWillUpdate() {
-  }
-
   render() {
-    const { body, activeSection, href } = this.props;
+    const { body, href } = this.props;
     return (
-      <a className={activeSection} href={href}>
+      <a className={this.checkClass()} href={href}>
         <p>{body}</p>
       </a>
     );
+  }
+
+  checkClass() {
+    const { href, activeSection } = this.props;
+    const activeTab = href.slice(0, href.length-5).toLowerCase().includes(activeSection);
+    return activeTab ? 'navTab active' : 'navTab';
   }
 }
 
