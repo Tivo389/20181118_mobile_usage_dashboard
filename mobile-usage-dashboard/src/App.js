@@ -21,8 +21,6 @@ class App extends Component {
     allAnchors.forEach(anchor => anchor.addEventListener('click', this.updateURL.bind(this)));
   }
 
-  componentWillUpdate() {}
-
   render() {
     const activeSection = this.assignActiveSection();
     return (
