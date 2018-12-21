@@ -601,7 +601,7 @@ header {
   padding: 0 0.8rem 0 0;
   position: relative;
   width: 100%; }
-  .barChart.caterBtnLg {
+  .barChart.displayBtnLg {
     width: calc(100% - 52px); }
   .barChart > p {
     color: #777777; }
