@@ -22,13 +22,12 @@ class App extends Component {
   }
 
   render() {
-    const activeSection = this.assignActiveSection();
     return (
       <div id="app" className="app">
         <Header></Header>
         <NavTabs activeSection={this.state.activeSection}></NavTabs>
         <div id="main">
-          { activeSection }                  
+          { this.assignActiveSection() }
         </div>
         <Footer></Footer>
       </div>
@@ -37,9 +36,9 @@ class App extends Component {
 
   assignActiveSection() {
     switch (this.state.activeSection) {
-      case 'USAGE': return <BodyUsage></BodyUsage>; break;
-      case 'PLANANDBILL': return <BodyPlanAndBills></BodyPlanAndBills>; break;
-      case 'ADDONS': return <BodyAddons></BodyAddons>; break;
+      case 'usage': return <BodyUsage></BodyUsage>; break;
+      case 'planandbill': return <BodyPlanAndBills></BodyPlanAndBills>; break;
+      case 'addons': return <BodyAddons></BodyAddons>; break;
       default: return <BodyUsage></BodyUsage>;
     }
   }    
@@ -48,9 +47,7 @@ class App extends Component {
     let target = e.target;
     // Since you might have clicked on a <p> or <img> element inside the <a> tag.
     // 01: Keep bubbling up until you reach the <a> element.
-    while (target && !target.href) {
-      target = target.parentNode;
-    }
+    while (target && !target.href) { target = target.parentNode; }
     // 02: Once you have the <a> tag, update current urlPath.
     if (target) {
       e.preventDefault();
