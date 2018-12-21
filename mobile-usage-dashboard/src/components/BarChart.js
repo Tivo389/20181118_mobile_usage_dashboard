@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
+import { createBrowserHistory } from 'history';
 
 class BarChart extends Component {
+  history = createBrowserHistory();
   render() {
-    const {
-      title,
-      amountFull:amtFull,
-      amountCurrent:amtCur,
-      unit,
-      showBarChartBtnSm:btnSm,
-      showBarChartBtnLg:btnLg
-    } = this.props;
+    // 999 Move these into a function, probably use class property to streo some of them?
+    const { title, amountFull:amtFull, amountCurrent:amtCur, unit } = this.props;
     const barWidth = amtCur/amtFull || null;
     const scaleFix = amtFull/amtCur || null;
+    const isAddonsPage = this.history.location.pathname.toLowerCase().includes('addons');
+    const isNotFullBar = barWidth != 1 && barWidth != null;
+    const showBtnSm = !isAddonsPage && isNotFullBar;
+    const showBtnLg = isAddonsPage && isNotFullBar;
     return (
       <div className="barChartContainer">
         <h3>{ title }</h3>
-        { btnSm === true &&
+        { showBtnSm &&
           <button className="barChartBtnSm">
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
           </button>
         }
+        {/* 999 if showBtnLg is true, then the class name should be 'barChart displayBtnLg' */}
         <div className="barChart" data-name="barChart">
           <div
             className={`barChartBar ${title.toLowerCase()}`}
@@ -34,7 +35,7 @@ class BarChart extends Component {
             { unit !== "" && <span>{ unit }</span> }
           </p>
         </div>
-        { btnLg === true &&
+        { showBtnLg  &&
           <button className="barChartBtnLg">
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
           </button>
