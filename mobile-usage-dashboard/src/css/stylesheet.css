@@ -584,6 +584,9 @@ header {
 .barChartContainer .barChartBtnLg {
   height: 40px;
   width: 40px; }
+  .barChartContainer .barChartBtnLg.disabled {
+    pointer-events: none;
+    opacity: 0.2; }
   .barChartContainer .barChartBtnLg img {
     display: block;
     height: 22px;

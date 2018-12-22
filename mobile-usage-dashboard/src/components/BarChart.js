@@ -11,7 +11,7 @@ class BarChart extends Component {
     const isAddonsPage = this.history.location.pathname.toLowerCase().includes('addons');
     const isNotFullBar = barWidth != 1 && barWidth != null;
     const showBtnSm = !isAddonsPage && isNotFullBar;
-    const showBtnLg = isAddonsPage && isNotFullBar;
+    const showBtnLg = isAddonsPage;
     return (
       <div className="barChartContainer">
         <h3>{ title }</h3>
@@ -20,8 +20,7 @@ class BarChart extends Component {
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
           </button>
         }
-        {/* 999 if showBtnLg is true, then the class name should be 'barChart displayBtnLg' */}
-        <div className="barChart" data-name="barChart">
+        <div className={ showBtnLg ? "barChart displayBtnLg" : "barChart" } data-name="barChart">
           <div
             className={`barChartBar ${title.toLowerCase()}`}
             style={{transform: `scaleX(${barWidth})`}}>
@@ -36,7 +35,7 @@ class BarChart extends Component {
           </p>
         </div>
         { showBtnLg  &&
-          <button className="barChartBtnLg">
+          <button className={ barWidth != null ? "barChartBtnLg" : "barChartBtnLg disabled" }>
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
           </button>
         }        
