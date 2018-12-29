@@ -1,16 +1,11 @@
 // MEDIA QUERY SETTINGS ---------------------------------------------------------------------------
-$tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
-@mixin tablet {
-  @media #{$tablet} {
-    @content;
-  }
-}
 @mixin desktop {
   @media #{$desktop} {
     @content;
   }
 }
+
 @mixin hover {
   @media (any-hover: hover) {
     &:hover {

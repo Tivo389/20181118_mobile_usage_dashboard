@@ -11,17 +11,34 @@
 @import '_barChart';
 
 .app {
-  background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);
   min-width: 100vw;
   min-height: 100vh;
-  @include tablet {
-    flex-direction: initial;
-  }
+  background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);
   @include desktop {
-    flex-direction: initial;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .body {
   background-color: $colorWhite;
+  @include desktop {
+    display: flex;
+  }
+}
+
+.column {
+  @include desktop {
+    padding: 1.4em 0 2.6em 0;
+    &:first-of-type {
+      flex: 1 0 60%;
+      padding-left: 3.8em;
+      padding-right: 2.2em;
+    }
+    &:last-of-type {
+      flex: 1 0 40%;
+      padding-right: 3.8em;
+      padding-left: 2.2em;
+    }
+  }
 }

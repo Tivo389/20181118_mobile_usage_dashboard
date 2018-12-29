@@ -10,6 +10,10 @@
     margin: 0 0 0 0.2em;
     text-transform: uppercase;
   }
+  @include desktop {
+    font-size: 2rem;
+    letter-spacing: 0.01em;
+  }
 }
 
 .barChartContainer [class^="barChartBtn"] {
@@ -98,6 +102,14 @@
       padding: 0 0.8rem 0 0;
       transform-origin: right;
       text-transform: uppercase;
+    }
+  }
+  @include desktop {
+    height: 60px;
+    margin: 4px 0 4px 0;
+    padding: 0 1.6rem 0 0;
+    & .barChartBar p {
+      padding: 0 1.6rem 0 0;
     }
   }
 }
