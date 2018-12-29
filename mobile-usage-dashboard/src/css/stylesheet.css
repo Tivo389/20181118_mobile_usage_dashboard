@@ -386,12 +386,16 @@ a {
       transform: translate(4px, 2px); } }
 
 header {
-  min-height: 44px;
-  min-width: 100%;
-  padding: 2px 4px;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  min-height: 44px;
+  min-width: 100%;
+  padding: 2px 4px; }
+  @media (min-width: 1024px) {
+    header {
+      min-height: 66px;
+      padding: 4px 16px; } }
 
 .headerLogo {
   max-height: 30px; }
@@ -413,6 +417,9 @@ header {
 .navTabs {
   display: flex;
   justify-content: space-between; }
+  @media (min-width: 1024px) {
+    .navTabs {
+      justify-content: flex-start; } }
 
 .navTab {
   background-color: #eeeeee;
@@ -438,6 +445,16 @@ header {
     background-color: #FFFFFF; }
     .navTab.active > p {
       color: #427AC6; }
+  @media (any-hover: hover) {
+    .navTab:hover {
+      background-color: #FFFFFF; } }
+  @media (min-width: 1024px) {
+    .navTab {
+      flex: 0 0 auto;
+      margin-right: 0.4em;
+      min-width: 140px; }
+      .navTab:last-of-type {
+        border-top-right-radius: 0.6em; } }
 
 .blockInfo .blockInfoText, .blockTextList ul > li {
   color: #474747;
@@ -455,6 +472,9 @@ header {
     margin: 0.4em 0 0.1em 0; }
   .block:last-of-type {
     border-bottom: 0; }
+  @media (min-width: 1024px) {
+    .block {
+      padding: 2em 0em; } }
 
 .blockData {
   flex-direction: column;
@@ -470,10 +490,10 @@ header {
       flex: 1 0 calc(100% - 18px); }
 
 .blockFooter {
+  align-items: flex-end;
   border-bottom: 4px solid #FFFFFF;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   padding: 1.6em 1em; }
   .blockFooter:last-of-type {
     border-bottom: 0; }
@@ -495,6 +515,11 @@ header {
     letter-spacing: 0.02em;
     margin: 0.6em 0 0 0;
     padding: 0.3em 1.2em 0.2em 1.2em; }
+  @media (min-width: 1024px) {
+    .blockFooter {
+      padding: 2em 1.4em; }
+      .blockFooter:last-of-type {
+        border-bottom: 4px solid #FFFFFF; } }
 
 .blockInfo {
   display: flex;
@@ -557,6 +582,10 @@ header {
     letter-spacing: initial;
     margin: 0 0 0 0.2em;
     text-transform: uppercase; }
+  @media (min-width: 1024px) {
+    .barChart > p, .barChart .barChartBar p {
+      font-size: 2rem;
+      letter-spacing: 0.01em; } }
 
 .barChartContainer [class^="barChartBtn"] {
   align-items: center;
@@ -629,17 +658,37 @@ header {
       padding: 0 0.8rem 0 0;
       transform-origin: right;
       text-transform: uppercase; }
+  @media (min-width: 1024px) {
+    .barChart {
+      height: 60px;
+      margin: 4px 0 4px 0;
+      padding: 0 1.6rem 0 0; }
+      .barChart .barChartBar p {
+        padding: 0 1.6rem 0 0; } }
 
 .app {
-  background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);
   min-width: 100vw;
-  min-height: 100vh; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .app {
-      flex-direction: initial; } }
+  min-height: 100vh;
+  background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%); }
   @media (min-width: 1024px) {
     .app {
-      flex-direction: initial; } }
+      display: flex;
+      flex-direction: column; } }
 
 .body {
   background-color: #FFFFFF; }
+  @media (min-width: 1024px) {
+    .body {
+      display: flex; } }
+
+@media (min-width: 1024px) {
+  .column {
+    padding: 1.4em 0 2.6em 0; }
+    .column:first-of-type {
+      flex: 1 0 60%;
+      padding-left: 3.8em;
+      padding-right: 2.2em; }
+    .column:last-of-type {
+      flex: 1 0 40%;
+      padding-right: 3.8em;
+      padding-left: 2.2em; } }

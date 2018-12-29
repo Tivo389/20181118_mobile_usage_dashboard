@@ -1,10 +1,14 @@
 header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   min-height: 44px;
   min-width: 100%;
   padding: 2px 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include desktop {
+    min-height: 66px;
+    padding: 4px 16px;
+  }
 }
 
 .headerLogo {

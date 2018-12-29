@@ -36,10 +36,10 @@ class App extends Component {
 
   assignActiveSection() {
     switch (this.state.activeSection) {
-      case 'usage': return <BodyUsage></BodyUsage>; break;
+      case 'usage':       return <BodyUsage></BodyUsage>;               break;
       case 'planandbill': return <BodyPlanAndBills></BodyPlanAndBills>; break;
-      case 'addons': return <BodyAddons></BodyAddons>; break;
-      default: return <BodyUsage></BodyUsage>;
+      case 'addons':      return <BodyAddons></BodyAddons>;             break;
+      default:            return <BodyUsage></BodyUsage>;
     }
   }    
 
