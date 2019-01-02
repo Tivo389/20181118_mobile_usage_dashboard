@@ -23,17 +23,22 @@ class BodyUsage extends Component {
   render() {
     return (
       <main className="body bodyPlanAndBills">
+      <div className="column">
         <BlockPlanInfo
           title="Your Current Plan"
           body="Home 250"
           unit="MB"
           action="Change Plan"></BlockPlanInfo>
-        <BlockTextList
-          title="Additional Plan Features"
-          listArray={this.planFeatures}></BlockTextList> 
-        <BlockTextList
-          title="Pay Per Use Rates"
-          listArray={this.payPerUseRates}></BlockTextList> 
+        <div className="columnRow">
+          <BlockTextList
+            title="Additional Plan Features"
+            listArray={this.planFeatures}></BlockTextList> 
+          <BlockTextList
+            title="Pay Per Use Rates"
+            listArray={this.payPerUseRates}></BlockTextList> 
+        </div>
+      </div>
+      <div className="column">
         <BlockInfo
           title="Next Billing Cycle In"
           body="12"
@@ -46,6 +51,7 @@ class BodyUsage extends Component {
           action="Pay Now"></BlockInfo>
         <BlockTitle title="Payment History"></BlockTitle>
         <BlockTitle title="Manage Auto History"></BlockTitle>
+      </div>
       </main>
     );
   }

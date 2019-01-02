@@ -18,7 +18,11 @@ class App extends Component {
 
   componentDidMount() {
     const allAnchors = Array.from(document.querySelectorAll('a'));
+    const currentLocation = this.history.location.pathname;
     allAnchors.forEach(anchor => anchor.addEventListener('click', this.updateURL.bind(this)));
+    this.setState({
+      activeSection: currentLocation.slice(1,currentLocation.length-5).toLowerCase()
+    });
   }
 
   render() {
