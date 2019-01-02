@@ -9,7 +9,7 @@ class BarChart extends Component {
     const barWidth = amtCur/amtFull || null;
     const scaleFix = amtFull/amtCur || null;
     const isAddonsPage = this.history.location.pathname.toLowerCase().includes('addons');
-    const isNotFullBar = barWidth != 1 && barWidth != null;
+    const isNotFullBar = barWidth !== 1 && barWidth !== null;
     const showBtnSm = !isAddonsPage && isNotFullBar;
     const showBtnLg = isAddonsPage;
     return (

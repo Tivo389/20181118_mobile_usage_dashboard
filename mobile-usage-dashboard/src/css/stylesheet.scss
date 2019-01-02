@@ -20,6 +20,10 @@
   }
 }
 
+.block + .body {
+  border-top: 1px solid $colorLightGray;
+}
+
 .body {
   background-color: $colorWhite;
   @include desktop {
@@ -39,6 +43,21 @@
       flex: 1 0 40%;
       padding-right: 3.8em;
       padding-left: 2.2em;
+    }
+    & .columnRow {
+      display: flex;
+      padding: 2em 0;
+      & .block {
+        border-bottom: none;
+        flex: 1 0 50%;
+        padding: 0 0 0 2em;
+        &:first-of-type {
+          padding: 0 2em 0 0;
+        }
+        & + .block {
+          border-left: 1px solid $colorLightGray;
+        }
+      }
     }
   }
 }

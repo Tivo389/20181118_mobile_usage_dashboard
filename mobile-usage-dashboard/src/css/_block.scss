@@ -28,6 +28,7 @@
 .blockData {
   flex-direction: column;
   padding-bottom: 22px;
+  width: 100%;
   & > div {
     display: flex;
     justify-content: space-between;
@@ -124,7 +125,8 @@
     padding: 0;
     & > li {
       @extend %extendBlockText;
-      margin: 0;
+      text-indent: -1em;
+      margin: 0 0 0 1em;
       padding: 0.2em 0 0 0;
       &:last-child {
         padding: 0.2em 0 0.4em 0;

@@ -478,7 +478,8 @@ header {
 
 .blockData {
   flex-direction: column;
-  padding-bottom: 22px; }
+  padding-bottom: 22px;
+  width: 100%; }
   .blockData > div {
     display: flex;
     justify-content: space-between;
@@ -551,7 +552,8 @@ header {
   margin: 0;
   padding: 0; }
   .blockTextList ul > li {
-    margin: 0;
+    text-indent: -1em;
+    margin: 0 0 0 1em;
     padding: 0.2em 0 0 0; }
     .blockTextList ul > li:last-child {
       padding: 0.2em 0 0.4em 0; }
@@ -620,6 +622,9 @@ header {
     display: block;
     height: 22px;
     width: 22px; }
+  @media (min-width: 1024px) {
+    .barChartContainer .barChartBtnLg {
+      margin: 14px 0; } }
 
 .barChart {
   background-color: #EBEBEB;
@@ -635,6 +640,9 @@ header {
   width: 100%; }
   .barChart.displayBtnLg {
     width: calc(100% - 52px); }
+    @media (min-width: 1024px) {
+      .barChart.displayBtnLg {
+        width: calc(100% - 62px); } }
   .barChart > p {
     color: #777777; }
   .barChart .barChartBar {
@@ -675,6 +683,9 @@ header {
       display: flex;
       flex-direction: column; } }
 
+.block + .body {
+  border-top: 1px solid #cccccc; }
+
 .body {
   background-color: #FFFFFF; }
   @media (min-width: 1024px) {
@@ -691,4 +702,15 @@ header {
     .column:last-of-type {
       flex: 1 0 40%;
       padding-right: 3.8em;
-      padding-left: 2.2em; } }
+      padding-left: 2.2em; }
+    .column .columnRow {
+      display: flex;
+      padding: 2em 0; }
+      .column .columnRow .block {
+        border-bottom: none;
+        flex: 1 0 50%;
+        padding: 0 0 0 2em; }
+        .column .columnRow .block:first-of-type {
+          padding: 0 2em 0 0; }
+        .column .columnRow .block + .block {
+          border-left: 1px solid #cccccc; } }
