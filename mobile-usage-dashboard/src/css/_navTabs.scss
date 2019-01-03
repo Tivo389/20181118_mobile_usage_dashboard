@@ -1,3 +1,5 @@
+$tabRadius: 0.5em;
+
 .navTabs {
   display: flex;
   justify-content: space-between;
@@ -7,20 +9,20 @@
 }
 
 .navTab {
-  background-color: #eeeeee;
+  background-color: #dddddd;
   flex: 1 0 auto;
   max-width: calc(33.333333% - 0.4em);
   min-width: 100px;
   padding: 0.8em 0.2em 0.6em 0.2em;
   &:first-of-type {
-    border-top-right-radius: 0.6em;
+    border-top-right-radius: $tabRadius;
   }
   &:nth-of-type(2) {
-    border-top-left-radius: 0.6em;
-    border-top-right-radius: 0.6em;
+    border-top-left-radius: $tabRadius;
+    border-top-right-radius: $tabRadius;
   }
   &:last-of-type {
-    border-top-left-radius: 0.6em;
+    border-top-left-radius: $tabRadius;
   }
   & > p {
     color: #777777;
@@ -44,7 +46,7 @@
     margin-right: 0.4em;
     min-width: 140px;
     &:last-of-type {
-      border-top-right-radius: 0.6em;
+      border-top-right-radius: $tabRadius;
     }
   }
 }
