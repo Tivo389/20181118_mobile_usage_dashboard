@@ -422,18 +422,18 @@ header {
       justify-content: flex-start; } }
 
 .navTab {
-  background-color: #eeeeee;
+  background-color: #dddddd;
   flex: 1 0 auto;
   max-width: calc(33.333333% - 0.4em);
   min-width: 100px;
   padding: 0.8em 0.2em 0.6em 0.2em; }
   .navTab:first-of-type {
-    border-top-right-radius: 0.6em; }
+    border-top-right-radius: 0.5em; }
   .navTab:nth-of-type(2) {
-    border-top-left-radius: 0.6em;
-    border-top-right-radius: 0.6em; }
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em; }
   .navTab:last-of-type {
-    border-top-left-radius: 0.6em; }
+    border-top-left-radius: 0.5em; }
   .navTab > p {
     color: #777777;
     font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
@@ -454,7 +454,7 @@ header {
       margin-right: 0.4em;
       min-width: 140px; }
       .navTab:last-of-type {
-        border-top-right-radius: 0.6em; } }
+        border-top-right-radius: 0.5em; } }
 
 .blockInfo .blockInfoText, .blockTextList ul > li {
   color: #474747;
