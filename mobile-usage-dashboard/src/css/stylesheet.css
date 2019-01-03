@@ -428,12 +428,12 @@ header {
   min-width: 100px;
   padding: 0.8em 0.2em 0.6em 0.2em; }
   .navTab:first-of-type {
-    border-top-right-radius: 0.5em; }
+    border-top-right-radius: 0.46em; }
   .navTab:nth-of-type(2) {
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em; }
+    border-top-left-radius: 0.46em;
+    border-top-right-radius: 0.46em; }
   .navTab:last-of-type {
-    border-top-left-radius: 0.5em; }
+    border-top-left-radius: 0.46em; }
   .navTab > p {
     color: #777777;
     font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
@@ -442,7 +442,21 @@ header {
     line-height: 1;
     text-align: center; }
   .navTab.active {
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    position: relative; }
+    .navTab.active::before, .navTab.active::after {
+      position: absolute;
+      bottom: 0;
+      display: block;
+      content: '';
+      width: 8px;
+      height: 8px; }
+    .navTab.active::before {
+      background: radial-gradient(circle at 0 0, rgba(204, 0, 0, 0) 8px, #FFFFFF 8.2px);
+      left: -8px; }
+    .navTab.active::after {
+      background: radial-gradient(circle at 100% 0, rgba(204, 0, 0, 0) 8px, #FFFFFF 8.2px);
+      right: -8px; }
     .navTab.active > p {
       color: #427AC6; }
   @media (any-hover: hover) {
@@ -454,7 +468,7 @@ header {
       margin-right: 0.4em;
       min-width: 140px; }
       .navTab:last-of-type {
-        border-top-right-radius: 0.5em; } }
+        border-top-right-radius: 0.46em; } }
 
 .blockInfo .blockInfoText, .blockTextList ul > li {
   color: #474747;
@@ -467,11 +481,10 @@ header {
   padding: 12px 10px;
   border-bottom: 1px solid #cccccc; }
   .block .block {
-    padding: 10px 0 8px 0; }
+    padding: 10px 0 8px 0;
+    border-bottom: 0; }
   .block > h3 {
     margin: 0.4em 0 0.1em 0; }
-  .block:last-of-type {
-    border-bottom: 0; }
   @media (min-width: 1024px) {
     .block {
       padding: 2em 0em; } }
@@ -682,9 +695,6 @@ header {
     .app {
       display: flex;
       flex-direction: column; } }
-
-.block + .body {
-  border-top: 1px solid #cccccc; }
 
 .body {
   background-color: #FFFFFF; }
