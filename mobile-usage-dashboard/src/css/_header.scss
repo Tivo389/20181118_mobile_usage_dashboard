@@ -6,8 +6,8 @@ header {
   min-width: 100%;
   padding: 2px 4px;
   @include desktop {
-    min-height: 66px;
-    padding: 4px 16px;
+    min-height: 54px;
+    padding: 8px 16px 4px 16px;
   }
 }
 

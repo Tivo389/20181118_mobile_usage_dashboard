@@ -358,27 +358,27 @@ a {
   html {
     font-size: 70.5%; } }
 
-.blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn, .blockTitle button, .barChartContainer [class^="barChartBtn"] {
+footer .blockFooter .blockFooterBtn, .blockInfo .blockInfoBtn, .blockTitle button, .barChartContainer [class^="barChartBtn"] {
   appearance: none;
   border-radius: 500px;
   border: 0;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1;
   padding: 0; }
-  .blockFooter .blockFooterBtn:focus, .blockInfo .blockInfoBtn:focus, .blockTitle button:focus, .barChartContainer :focus[class^="barChartBtn"] {
+  footer .blockFooter .blockFooterBtn:focus, .blockInfo .blockInfoBtn:focus, .blockTitle button:focus, .barChartContainer :focus[class^="barChartBtn"] {
     outline: 0; }
-  .blockFooter .blockFooterBtn i, .blockInfo .blockInfoBtn i, .blockTitle button i, .barChartContainer [class^="barChartBtn"] i {
+  footer .blockFooter .blockFooterBtn i, .blockInfo .blockInfoBtn i, .blockTitle button i, .barChartContainer [class^="barChartBtn"] i {
     margin: 0 0 0 0.4em;
     font-size: 80%; }
-  .blockFooter .blockFooterBtn i.fa-plus, .blockInfo .blockInfoBtn i.fa-plus, .blockTitle button i.fa-plus, .barChartContainer [class^="barChartBtn"] i.fa-plus {
+  footer .blockFooter .blockFooterBtn i.fa-plus, .blockInfo .blockInfoBtn i.fa-plus, .blockTitle button i.fa-plus, .barChartContainer [class^="barChartBtn"] i.fa-plus {
     margin: 0; }
 
 @media (any-hover: hover) {
-  .blockFooter .btnHover:hover, .blockInfo .blockInfoBtn:hover, .blockTitle button:hover {
+  footer .blockFooter .btnHover:hover, .blockInfo .blockInfoBtn:hover, .blockTitle button:hover {
     margin-left: -4px;
     padding-left: 4px;
     transform: translateX(4px); }
-    .blockFooter .btnHover:hover:active, .blockInfo .blockInfoBtn:hover:active, .blockTitle button:hover:active {
+    footer .blockFooter .btnHover:hover:active, .blockInfo .blockInfoBtn:hover:active, .blockTitle button:hover:active {
       margin-top: -2px;
       padding-top: 2px;
       margin-left: -4px;
@@ -394,8 +394,8 @@ header {
   padding: 2px 4px; }
   @media (min-width: 1024px) {
     header {
-      min-height: 66px;
-      padding: 4px 16px; } }
+      min-height: 54px;
+      padding: 8px 16px 4px 16px; } }
 
 .headerLogo {
   max-height: 30px; }
@@ -428,12 +428,12 @@ header {
   min-width: 100px;
   padding: 0.8em 0.2em 0.6em 0.2em; }
   .navTab:first-of-type {
-    border-top-right-radius: 0.46em; }
+    border-top-right-radius: 10px; }
   .navTab:nth-of-type(2) {
-    border-top-left-radius: 0.46em;
-    border-top-right-radius: 0.46em; }
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; }
   .navTab:last-of-type {
-    border-top-left-radius: 0.46em; }
+    border-top-left-radius: 10px; }
   .navTab > p {
     color: #777777;
     font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
@@ -441,6 +441,10 @@ header {
     letter-spacing: -0.02em;
     line-height: 1;
     text-align: center; }
+    @media (min-width: 1024px) {
+      .navTab > p {
+        font-size: 1.6rem;
+        letter-spacing: 0; } }
   .navTab.active {
     background-color: #FFFFFF;
     position: relative; }
@@ -466,9 +470,9 @@ header {
     .navTab {
       flex: 0 0 auto;
       margin-right: 0.4em;
-      min-width: 140px; }
+      min-width: 160px; }
       .navTab:last-of-type {
-        border-top-right-radius: 0.46em; } }
+        border-top-right-radius: 10px; } }
 
 .blockInfo .blockInfoText, .blockTextList ul > li {
   color: #474747;
@@ -485,9 +489,11 @@ header {
     border-bottom: 0; }
   .block > h3 {
     margin: 0.4em 0 0.1em 0; }
+  .block:last-of-type {
+    border-bottom: 0; }
   @media (min-width: 1024px) {
     .block {
-      padding: 2em 0em; } }
+      padding: 18px 0em; } }
 
 .blockData {
   flex-direction: column;
@@ -503,15 +509,15 @@ header {
     .blockData > div h3 {
       flex: 1 0 calc(100% - 18px); }
 
-.blockFooter {
+footer .blockFooter {
   align-items: flex-end;
   border-bottom: 4px solid #FFFFFF;
   display: flex;
   flex-direction: column;
   padding: 1.6em 1em; }
-  .blockFooter:last-of-type {
+  footer .blockFooter:last-of-type {
     border-bottom: 0; }
-  .blockFooter p {
+  footer .blockFooter p {
     margin-right: auto;
     color: #FFFFFF;
     display: inline-block;
@@ -521,7 +527,7 @@ header {
     letter-spacing: 0.04em;
     text-transform: uppercase;
     width: 85%; }
-  .blockFooter .blockFooterBtn {
+  footer .blockFooter .blockFooterBtn {
     background-color: #FFFFFF;
     color: #ee6b1e;
     font-size: 1.2rem;
@@ -530,10 +536,23 @@ header {
     margin: 0.6em 0 0 0;
     padding: 0.3em 1.2em 0.2em 1.2em; }
   @media (min-width: 1024px) {
-    .blockFooter {
+    footer .blockFooter {
+      background-image: linear-gradient(90deg, #FFAA21 0%, #ED6A1F 100%);
+      border-radius: 8px;
+      border: 0;
+      flex-direction: column;
+      flex: 0 0 calc(33.333333% - 5px);
+      justify-content: space-between;
       padding: 2em 1.4em; }
-      .blockFooter:last-of-type {
-        border-bottom: 4px solid #FFFFFF; } }
+      footer .blockFooter + .blockFooter {
+        margin-left: 8px; } }
+
+@media (min-width: 1024px) {
+  footer {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: flex-start;
+    padding: 6px 8px; } }
 
 .blockInfo {
   display: flex;
@@ -707,12 +726,12 @@ header {
     padding: 1.4em 0 2.6em 0; }
     .column:first-of-type {
       flex: 1 0 60%;
-      padding-left: 3.8em;
-      padding-right: 2.2em; }
+      padding-left: 4.2em;
+      padding-right: 2.4em; }
     .column:last-of-type {
       flex: 1 0 40%;
-      padding-right: 3.8em;
-      padding-left: 2.2em; }
+      padding-right: 4.2em;
+      padding-left: 2.4em; }
     .column .columnRow {
       display: flex;
       padding: 2em 0; }
@@ -723,4 +742,6 @@ header {
         .column .columnRow .block:first-of-type {
           padding: 0 2em 0 0; }
         .column .columnRow .block + .block {
-          border-left: 1px solid #cccccc; } }
+          border-left: 1px solid #cccccc; }
+      .column .columnRow:last-of-type {
+        padding-bottom: 0; } }

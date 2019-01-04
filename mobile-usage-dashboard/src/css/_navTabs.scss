@@ -1,4 +1,4 @@
-$tabRadius: 0.46em;
+$tabRadius: 10px;
 
 .navTabs {
   display: flex;
@@ -31,6 +31,10 @@ $tabRadius: 0.46em;
     letter-spacing: -0.02em;
     line-height: 1;
     text-align: center;
+    @include desktop {
+      font-size: 1.6rem;
+      letter-spacing: 0;
+    }
   }
   &.active {
     background-color: $colorWhite;
@@ -61,7 +65,7 @@ $tabRadius: 0.46em;
   @include desktop {
     flex: 0 0 auto;
     margin-right: 0.4em;
-    min-width: 140px;
+    min-width: 160px;
     &:last-of-type {
       border-top-right-radius: $tabRadius;
     }

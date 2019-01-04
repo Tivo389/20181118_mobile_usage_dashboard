@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BlockInfo from './BlockInfo';
-import BlockPlanAddon from './BlockPlanAddon';
+import BlockPlanUsage from './BlockPlanUsage';
 import BlockTitle from './BlockTitle';
 import BlockTextList from './BlockTextList ';
 
@@ -15,7 +15,7 @@ class BodyAddons extends Component {
           <BlockTextList
             title="Your Current Addons"
             listArray={this.currentAddons}></BlockTextList> 
-          <BlockPlanAddon></BlockPlanAddon>
+          <BlockPlanUsage></BlockPlanUsage>
         </div>
         <div className="column">
           <BlockInfo
