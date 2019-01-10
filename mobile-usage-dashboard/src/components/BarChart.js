@@ -5,6 +5,7 @@ class BarChart extends Component {
   history = createBrowserHistory();
   render() {
     const { title, amountFull:amtFull, amountCurrent:amtCur, unit } = this.props;
+    const titleExtract = title.slice(0,4);
     const barWidth = amtCur/amtFull || null;
     const currentValWidth = (barWidth * 100) || 100;
     const isAddonsPage = this.history.location.pathname.toLowerCase().includes('addons');
@@ -20,14 +21,15 @@ class BarChart extends Component {
           </button>
         }
        
+        {/* 999 How to apply dynamic style after a delay...? */}
         <div className={ showBtnLg ? "barChart displayBtnLg" : "barChart" } data-name="barChart">
           <p className="currentAmount" style={{width: `${currentValWidth}%`}}>
             { amtCur }
             { unit !== "" && <span>{ unit.toUpperCase() }</span> }
           </p>
           <div
-            className={`barChartBar ${title.toLowerCase()}`}
-            style={{transform: `scaleX(${barWidth})`}}>
+            className={`barChartBar ${titleExtract.toLowerCase()}`}
+            style={{ transform: `scaleX(${barWidth})`}}>
           </div>
           <p className="fullAmount">
             { amtFull }
