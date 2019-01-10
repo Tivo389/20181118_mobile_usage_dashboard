@@ -4,10 +4,9 @@ import { createBrowserHistory } from 'history';
 class BarChart extends Component {
   history = createBrowserHistory();
   render() {
-    // 999 Move these into a function, probably use class property to streo some of them?
     const { title, amountFull:amtFull, amountCurrent:amtCur, unit } = this.props;
     const barWidth = amtCur/amtFull || null;
-    const scaleFix = amtFull/amtCur || null;
+    const currentValWidth = (barWidth * 100) || 100;
     const isAddonsPage = this.history.location.pathname.toLowerCase().includes('addons');
     const isNotFullBar = barWidth !== 1 && barWidth !== null;
     const showBtnSm = !isAddonsPage && isNotFullBar;
@@ -20,18 +19,19 @@ class BarChart extends Component {
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
           </button>
         }
+       
         <div className={ showBtnLg ? "barChart displayBtnLg" : "barChart" } data-name="barChart">
+          <p className="currentAmount" style={{width: `${currentValWidth}%`}}>
+            { amtCur }
+            { unit !== "" && <span>{ unit.toUpperCase() }</span> }
+          </p>
           <div
             className={`barChartBar ${title.toLowerCase()}`}
             style={{transform: `scaleX(${barWidth})`}}>
-            <p style={{transform: `scaleX(${scaleFix})`}}>
-              { amtCur }
-              { unit !== "" && <span>{ unit }</span> }
-            </p>
           </div>
-          <p>
+          <p className="fullAmount">
             { amtFull }
-            { unit !== "" && <span>{ unit }</span> }
+            { unit !== "" && <span>{ unit.toUpperCase() }</span> }
           </p>
         </div>
         { showBtnLg  &&

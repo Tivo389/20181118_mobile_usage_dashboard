@@ -79,9 +79,19 @@
       width: calc(100% - 62px);
     }
   }
-  & > p {
+  & > .fullAmount {
     @extend %extendText;
     color: $colorGray;
+  }
+  & > .currentAmount {
+    @extend %extendText;
+    color: $colorWhite;
+    padding: 0 0.8rem 0 0;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
   }
   & .barChartBar {
     bottom: 0;
@@ -101,13 +111,6 @@
     }
     &.text {
       background-image: linear-gradient(-90deg, #00A1E0 0%, #0042AD 100%);
-    }
-    & p {
-      @extend %extendText;
-      color: $colorWhite;
-      padding: 0 0.8rem 0 0;
-      transform-origin: right;
-      text-transform: uppercase;
     }
   }
   @include desktop {
