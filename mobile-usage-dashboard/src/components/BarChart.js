@@ -3,42 +3,59 @@ import { createBrowserHistory } from 'history';
 
 class BarChart extends Component {
   history = createBrowserHistory();
+  state = {
+    animate: false
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        animate: true
+      });
+    }, 500);
+  }
+
   render() {
     const { title, amountFull:amtFull, amountCurrent:amtCur, unit } = this.props;
-    const barWidth = amtCur/amtFull || null;
+    const titleExtract = title.slice(0,4);
+    const barWidth = amtCur/amtFull || 1;
     const currentValWidth = (barWidth * 100) || 100;
     const isAddonsPage = this.history.location.pathname.toLowerCase().includes('addons');
     const isNotFullBar = barWidth !== 1 && barWidth !== null;
     const showBtnSm = !isAddonsPage && isNotFullBar;
     const showBtnLg = isAddonsPage;
+    let barChartBar = false;
+    let currentAmount = false;
+    if (this.state.animate) {
+      barChartBar = <div className={`barChartBar ${titleExtract.toLowerCase()}`}
+                         style={{ transform: `scaleX(${barWidth})`}}></div>;
+      currentAmount = <p className="currentAmount"
+                          style={{
+                            width: `${currentValWidth}%`,
+                            animation: 'fadeIn 1s'
+                          }}>{ amtCur }{ unit !== "" && <span>{ unit.toUpperCase() }</span> }</p>;
+    } else {
+      barChartBar = <div className={`barChartBar ${titleExtract.toLowerCase()}`}></div>;
+    }
     return (
       <div className="barChartContainer">
         <h3>{ title }</h3>
         { showBtnSm &&
           <button className="barChartBtnSm">
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
-          </button>
-        }
-       
+          </button> }
         <div className={ showBtnLg ? "barChart displayBtnLg" : "barChart" } data-name="barChart">
-          <p className="currentAmount" style={{width: `${currentValWidth}%`}}>
-            { amtCur }
-            { unit !== "" && <span>{ unit.toUpperCase() }</span> }
-          </p>
-          <div
-            className={`barChartBar ${title.toLowerCase()}`}
-            style={{transform: `scaleX(${barWidth})`}}>
-          </div>
+          { currentAmount }
+          { barChartBar }         
           <p className="fullAmount">
-            { amtFull }
+            { amtFull.toUpperCase() }
             { unit !== "" && <span>{ unit.toUpperCase() }</span> }
           </p>
         </div>
         { showBtnLg  &&
           <button className={ barWidth != null ? "barChartBtnLg" : "barChartBtnLg disabled" }>
             <img src={require('./../images/svgAdd.svg')} alt="Add Button"/>
-          </button>
-        }        
+          </button> }        
       </div>
     );
   }
