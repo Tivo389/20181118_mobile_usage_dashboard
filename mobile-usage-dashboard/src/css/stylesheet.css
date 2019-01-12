@@ -607,11 +607,14 @@ footer .blockFooter {
 
 @keyframes fadeIn {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    transform: translate(14px, -50%); }
   75% {
-    opacity: 0; }
+    opacity: 0;
+    transform: translate(14px, -50%); }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+    transform: translate(0px, -50%); } }
 
 .barChart > .fullAmount, .barChart > .currentAmount {
   font-size: 1.8rem;
@@ -704,7 +707,7 @@ footer .blockFooter {
     right: 0;
     top: 0;
     transform-origin: left;
-    transition-timing-function: cubic-bezier(0, 1.4, 0.6, 1);
+    transition-timing-function: cubic-bezier(0, 0.6, 0, 1.2);
     transition-duration: 0.6s;
     transform: scaleX(0); }
     .barChart .barChartBar.data {
