@@ -1,7 +1,7 @@
 @keyframes fadeIn {
-  0%    { opacity: 0; }
-  75%   { opacity: 0; }
-  100%  { opacity: 1; }
+  0%    { opacity: 0; transform: translate(14px, -50%); }
+  75%   { opacity: 0; transform: translate(14px, -50%); }
+  100%  { opacity: 1; transform: translate(0px, -50%); }
 }
 
 %extendText {
@@ -110,7 +110,7 @@
     right: 0;
     top: 0;
     transform-origin: left;
-    transition-timing-function: cubic-bezier(0, 1.4, 0.6, 1);
+    transition-timing-function: cubic-bezier(0, 0.6, 0, 1.2);
     transition-duration: $transitionM;
     transform: scaleX(0);
     &.data {

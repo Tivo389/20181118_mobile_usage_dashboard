@@ -7,12 +7,15 @@ class BarChart extends Component {
     animate: false
   }
 
-  componentDidMount() {
-    setTimeout(() => {
+  componentWillMount() {
+    this.interval = setTimeout(() => {
       this.setState({
         animate: true
       });
-    }, 500);
+    }, 400);
+  }
+  componentWillUnmount() {
+    clearTimeout(this.interval);
   }
 
   render() {
@@ -32,7 +35,7 @@ class BarChart extends Component {
       currentAmount = <p className="currentAmount"
                           style={{
                             width: `${currentValWidth}%`,
-                            animation: 'fadeIn 1s'
+                            animation: 'fadeIn 0.6s ease-out',
                           }}>{ amtCur }{ unit !== "" && <span>{ unit.toUpperCase() }</span> }</p>;
     } else {
       barChartBar = <div className={`barChartBar ${titleExtract.toLowerCase()}`}></div>;
